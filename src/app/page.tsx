@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
 import { machineProducts } from "@/lib/data";
 import { Container } from "@/components/ui";
 import { formatPrice } from "@/lib/utils";
@@ -69,26 +69,49 @@ export default function HomePage() {
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {featured.map((product) => (
-              <article key={product.slug} className="overflow-hidden rounded-[14px] border border-stone-200 bg-white">
-                <Link href={`/products/${product.slug}`} className="block aspect-[4/3] bg-stone-100">
-                  <img src={product.images[0]} alt={product.name} className="h-full w-full object-cover" />
-                </Link>
+              <article
+                key={product.slug}
+                className="group overflow-hidden rounded-[14px] border border-stone-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-[0_28px_60px_rgba(15,23,42,0.12)]"
+              >
+                <div className="relative">
+                  <Link href={`/products/${product.slug}`} className="group/image block aspect-[4/3] overflow-hidden bg-stone-100">
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      className="h-full w-full object-cover transition duration-700 ease-out group-hover/image:scale-[1.06]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent opacity-0 transition duration-300 group-hover/image:opacity-100" />
+                  </Link>
+                  <div className="absolute left-3 top-3 z-10 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <Link
+                      href={`/products/${product.slug}`}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-950 shadow-sm backdrop-blur"
+                    >
+                      <Eye className="h-3.5 w-3.5" />
+                      Quickview
+                    </Link>
+                  </div>
+                </div>
                 <div className="space-y-3 p-4">
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">{product.series}</p>
-                      <Link href={`/products/${product.slug}`} className="mt-1 block text-lg font-semibold text-ink-950 hover:text-stone-700">
+                      <Link href={`/products/${product.slug}`} className="mt-1 block text-lg font-semibold text-ink-950 transition hover:text-stone-600">
                         {product.name}
                       </Link>
                     </div>
                     <span className="text-sm text-stone-500">{product.status}</span>
                   </div>
                   <p className="text-sm leading-6 text-stone-600">{product.summary}</p>
+                  <div className="flex flex-wrap gap-2 text-xs text-stone-500">
+                    <span className="rounded-full border border-stone-200 px-2.5 py-1">{product.type}</span>
+                    <span className="rounded-full border border-stone-200 px-2.5 py-1">{product.compareTag}</span>
+                  </div>
                   <div className="flex items-center justify-between gap-3 pt-2">
                     <p className="text-lg font-semibold text-ink-950">{formatPrice(product.price)}</p>
                     <Link
                       href={`/products/${product.slug}`}
-                      className="inline-flex items-center gap-2 rounded-[12px] border border-stone-200 px-3 py-2 text-sm font-medium text-ink-950 transition hover:border-amber-400"
+                      className="inline-flex items-center gap-2 rounded-full border border-stone-200 px-3 py-2 text-sm font-medium text-ink-950 transition hover:border-stone-400 hover:bg-stone-50"
                     >
                       View
                     </Link>

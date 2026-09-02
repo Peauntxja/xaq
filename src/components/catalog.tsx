@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Heart, Scale, ShoppingCart, ArrowUpDown, Search, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, Scale, ShoppingCart, ArrowUpDown, Search, ArrowRight, Eye } from "lucide-react";
 import { machineProducts, accessories, type MachineProduct, type Article, type FAQSection } from "@/lib/data";
 import { Button, Panel, Badge, FieldLabel } from "@/components/ui";
 import { formatPrice } from "@/lib/utils";
@@ -10,64 +10,79 @@ import { useStore } from "@/components/store-provider";
 
 export function ProductCard({ product }: { product: MachineProduct }) {
   const { addToCart, toggleWishlist, toggleCompare, wishlist, compare } = useStore();
-  const [color, setColor] = useState(product.colors[0] ?? "Default");
+  const primaryColor = product.colors[0] ?? "Default";
   const isWishlisted = wishlist.includes(product.slug);
   const isCompared = compare.includes(product.slug);
 
   return (
-    <Panel className="flex h-full flex-col overflow-hidden">
-      <Link href={`/products/${product.slug}`} className="group block">
-        <div className="aspect-[4/3] overflow-hidden border-b border-white/10 bg-ink-900">
+    <Panel className="group flex h-full flex-col overflow-hidden border-stone-200 bg-white text-ink-950 shadow-[0_18px_40px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-[0_28px_60px_rgba(15,23,42,0.12)]">
+      <div className="relative">
+        <Link href={`/products/${product.slug}`} className="group/image block aspect-[4/3] overflow-hidden bg-stone-100">
           <img
             src={product.images[0]}
             alt={product.name}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="h-full w-full object-cover transition duration-700 ease-out group-hover/image:scale-[1.06] group-hover/image:rotate-[-0.2deg]"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent opacity-0 transition duration-300 group-hover/image:opacity-100" />
+        </Link>
+        <div className="absolute left-3 top-3 z-10 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <Link
+            href={`/products/${product.slug}`}
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/70 bg-white/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-950 shadow-sm backdrop-blur"
+          >
+            <Eye className="h-3.5 w-3.5" />
+            Quickview
+          </Link>
         </div>
-      </Link>
+        <div className="absolute inset-x-3 bottom-3 z-10 flex flex-wrap gap-2 opacity-0 translate-y-2 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <button
+            type="button"
+            onClick={() => toggleWishlist(product.slug)}
+            className="inline-flex flex-1 items-center justify-center rounded-full border border-white/70 bg-white/90 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-950 shadow-sm backdrop-blur transition hover:bg-white"
+          >
+            {isWishlisted ? "Saved to Wish List" : "Add to Wish List"}
+          </button>
+          <button
+            type="button"
+            onClick={() => toggleCompare(product.slug)}
+            className="inline-flex flex-1 items-center justify-center rounded-full border border-white/70 bg-white/90 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-950 shadow-sm backdrop-blur transition hover:bg-white"
+          >
+            {isCompared ? "In Compare" : "Compare this Product"}
+          </button>
+        </div>
+      </div>
       <div className="flex flex-1 flex-col gap-4 p-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">
+          <span>{product.series}</span>
+          <span>{product.status}</span>
+        </div>
         <div className="space-y-1">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <Badge>{product.series}</Badge>
-            <span className="text-sm text-stone-400">{product.status}</span>
-          </div>
-          <Link href={`/products/${product.slug}`} className="block text-lg font-semibold text-white hover:text-amber-300">
+          <Link href={`/products/${product.slug}`} className="block text-lg font-semibold text-ink-950 transition hover:text-stone-600">
             {product.name}
           </Link>
-          <p className="text-sm leading-6 text-stone-300">{product.summary}</p>
+          <p className="text-sm leading-6 text-stone-600">{product.summary}</p>
         </div>
-        <div className="flex flex-wrap gap-2 text-xs text-stone-400">
-          {product.features.slice(0, 3).map((feature) => (
-            <span key={feature} className="rounded-full border border-white/10 px-2.5 py-1">
-              {feature}
-            </span>
-          ))}
+        <div className="flex flex-wrap gap-2 text-xs text-stone-500">
+          <span className="rounded-full border border-stone-200 px-2.5 py-1">{product.type}</span>
+          <span className="rounded-full border border-stone-200 px-2.5 py-1">{product.compareTag}</span>
         </div>
-        <div className="space-y-2">
-          <FieldLabel>Color</FieldLabel>
-          <select
-            value={color}
-            onChange={(event) => setColor(event.target.value)}
-            className="w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-white outline-none"
-          >
-            {product.colors.map((item) => (
-              <option key={item}>{item}</option>
-            ))}
-          </select>
-        </div>
-        <div className="mt-auto flex items-center justify-between gap-3">
+        <div className="mt-auto flex items-end justify-between gap-3 pt-1">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-stone-500">From</p>
-            <p className="text-xl font-semibold text-white">{formatPrice(product.price)}</p>
+            <p className="text-xl font-semibold text-ink-950">{formatPrice(product.price)}</p>
           </div>
-          <div className="flex gap-2">
-            <Button variant="ghost" onClick={() => toggleWishlist(product.slug)} aria-label="Wishlist">
-              <Heart className={isWishlisted ? "h-4 w-4 fill-current text-amber-300" : "h-4 w-4"} />
-            </Button>
-            <Button variant="ghost" onClick={() => toggleCompare(product.slug)} aria-label="Compare">
-              <Scale className={isCompared ? "h-4 w-4 text-teal-300" : "h-4 w-4"} />
-            </Button>
-            <Button onClick={() => addToCart(product.slug, color)}>Add</Button>
+          <div className="flex flex-col items-end gap-2">
+            <button
+              type="button"
+              onClick={() => addToCart(product.slug, primaryColor)}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-ink-800"
+            >
+              <ShoppingCart className="h-4 w-4" />
+              Add to Cart
+            </button>
+            <Link href={`/products/${product.slug}`} className="text-xs font-medium uppercase tracking-[0.18em] text-stone-500 transition hover:text-ink-950 hover:underline underline-offset-4">
+              View details
+            </Link>
           </div>
         </div>
       </div>
@@ -77,19 +92,27 @@ export function ProductCard({ product }: { product: MachineProduct }) {
 
 export function AccessoryCard({ name, price, summary, images }: { name: string; price: number; summary: string; images: string[] }) {
   return (
-    <Panel className="flex h-full flex-col overflow-hidden">
-      <div className="aspect-[4/3] border-b border-white/10 bg-ink-900">
-        <img src={images[0]} alt={name} className="h-full w-full object-cover" />
+    <Panel className="group flex h-full flex-col overflow-hidden border-stone-200 bg-white text-ink-950 shadow-[0_18px_40px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:border-stone-300 hover:shadow-[0_28px_60px_rgba(15,23,42,0.12)]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-stone-100">
+        <img src={images[0]} alt={name} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-4">
-        <p className="text-lg font-semibold text-white">{name}</p>
-        <p className="text-sm leading-6 text-stone-300">{summary}</p>
-        <div className="mt-auto flex items-center justify-between">
-          <p className="text-xl font-semibold text-white">{formatPrice(price)}</p>
-          <Button variant="secondary">
+        <div className="flex items-center justify-between gap-2 text-[11px] uppercase tracking-[0.22em] text-stone-500">
+          <span>Accessory</span>
+          <span>Demo item</span>
+        </div>
+        <p className="text-lg font-semibold text-ink-950">{name}</p>
+        <p className="text-sm leading-6 text-stone-600">{summary}</p>
+        <div className="mt-auto flex items-center justify-between gap-3 pt-1">
+          <p className="text-xl font-semibold text-ink-950">{formatPrice(price)}</p>
+          <button
+            type="button"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-ink-800"
+          >
             <ShoppingCart className="h-4 w-4" />
             Add
-          </Button>
+          </button>
         </div>
       </div>
     </Panel>

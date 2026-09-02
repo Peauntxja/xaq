@@ -10,7 +10,7 @@ export default function ProTeamPage() {
         title="Artist faces, ambassadors, and proof."
         description="Reference stores often use team pages to deepen trust. This version gives the demo a polished place for artist cards and testimonials."
         ctas={[{ label: "Events", href: "/conventions", primary: true }, { label: "About", href: "/about-us" }]}
-        image="https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1200&q=80"
+        image="/brochure/workshop-qc.png"
       />
       <CatalogSection title="Team members" description="A simple structure for pro artists and ambassadors.">
         <TeamGrid members={teamMembers} />

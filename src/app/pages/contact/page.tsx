@@ -10,7 +10,7 @@ export default function ContactPage() {
         title="A B2B contact page that feels ready for real inquiries."
         description="Use this page for distributor questions, price requests, account setup, and regional partnership conversations."
         ctas={[{ label: "Download profile", href: "/company-profile.pdf", primary: true }, { label: "FAQ", href: "/faq" }]}
-        image="https://images.unsplash.com/photo-1516321310768-61cffe94f6e9?auto=format&fit=crop&w=1200&q=80"
+        image="/brochure/workshop-qc.png"
       />
       <CatalogSection title="Contact form" description="Static form controls for launch review.">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.7fr]">

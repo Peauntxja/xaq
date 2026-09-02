@@ -9,7 +9,7 @@ export default function ConventionsPage() {
         title="Event pages for shows, booths, and launches."
         description="The reference store highlights conventions and live events. This demo includes a matching page so the navigation feels complete."
         ctas={[{ label: "ProTeam", href: "/proteam", primary: true }, { label: "Contact", href: "/pages/contact" }]}
-        image="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80"
+        image="/brochure/factory.png"
       />
       <CatalogSection title="Upcoming events" description="Use this to publish expo dates, booth numbers, and sign-up info.">
         <EventsList items={eventItems} />

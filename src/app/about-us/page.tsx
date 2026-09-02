@@ -14,7 +14,7 @@ export default function AboutPage() {
           { label: "Download profile", href: "/company-profile.pdf", primary: true },
           { label: "Wholesale contact", href: "/pages/contact" }
         ]}
-        image="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80"
+        image="/brochure/cover.png"
       />
       <CatalogSection title="Official record" description="The PDF details that help the site feel like a real company page.">
         <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">

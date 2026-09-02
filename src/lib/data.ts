@@ -456,7 +456,7 @@ export const accessories = [
     name: "RCA Cable",
     price: 29,
     summary: "Stable low-profile cable for wired setups.",
-    images: ["https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"]
+    images: ["/brochure/cover.png"]
   }
 ];
 

@@ -9,7 +9,7 @@ export default function LoginPage() {
         title="Login and account pages are in place."
         description="The reference store exposes account, login, and order history areas. Here they are mocked, but ready for a future auth layer."
         ctas={[{ label: "Create account", href: "/account", primary: true }, { label: "Cart", href: "/shopping-cart" }]}
-        image="https://images.unsplash.com/photo-1516321310768-45b5347c5d6f?auto=format&fit=crop&w=1200&q=80"
+        image="/brochure/cover.png"
       />
       <CatalogSection title="Sign in" description="Mock sign-in form for the demo storefront.">
         <Panel className="mx-auto max-w-xl space-y-4 p-5">

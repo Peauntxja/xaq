@@ -1,14 +1,15 @@
-import { SplitHero, CatalogSection, StoreSummary } from "@/components/page-blocks";
+import { SplitHero, CatalogSection } from "@/components/page-blocks";
 import { Panel, FieldLabel, Button } from "@/components/ui";
+import { companyProfile } from "@/lib/data";
 
 export default function ContactPage() {
   return (
     <>
       <SplitHero
-        eyebrow="Contact"
-        title="A support page that looks ready to receive real requests."
-        description="This page mirrors the reference site's contact form and can later connect to email or CRM handling."
-        ctas={[{ label: "FAQ", href: "/faq", primary: true }, { label: "Policies", href: "/policies/privacy-policy" }]}
+        eyebrow="Wholesale contact"
+        title="A B2B contact page that feels ready for real inquiries."
+        description="Use this page for distributor questions, price requests, account setup, and regional partnership conversations."
+        ctas={[{ label: "Download profile", href: "/company-profile.pdf", primary: true }, { label: "FAQ", href: "/faq" }]}
         image="https://images.unsplash.com/photo-1516321310768-61cffe94f6e9?auto=format&fit=crop&w=1200&q=80"
       />
       <CatalogSection title="Contact form" description="Static form controls for launch review.">
@@ -35,10 +36,25 @@ export default function ContactPage() {
             <Button>Submit</Button>
           </Panel>
           <div className="space-y-4">
-            <StoreSummary />
-            <Panel className="p-5 text-sm leading-6 text-stone-300">
-              Use this space for support hours, returns email, and wholesale contact details once the live backend is
-              connected.
+            <Panel className="space-y-4 p-5">
+              <div>
+                <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">Business details</p>
+                <p className="mt-2 text-lg font-semibold text-ink-950">{companyProfile.legalName}</p>
+                <p className="mt-1 text-sm text-stone-600">{companyProfile.registryName}</p>
+              </div>
+              <div className="grid gap-3 text-sm">
+                <div className="rounded-[12px] border border-stone-200 bg-[#fcfbf8] p-4">
+                  <p className="text-[11px] font-medium tracking-[0.2em] text-stone-500">Registration</p>
+                  <p className="mt-2 text-stone-700">{companyProfile.businessRegistrationNo}</p>
+                </div>
+                <div className="rounded-[12px] border border-stone-200 bg-[#fcfbf8] p-4">
+                  <p className="text-[11px] font-medium tracking-[0.2em] text-stone-500">Address</p>
+                  <p className="mt-2 leading-6 text-stone-700">{companyProfile.address}</p>
+                </div>
+              </div>
+              <p className="text-sm leading-6 text-stone-600">
+                For trade enquiries, include your company name, region, expected volume, and the product family you want to review first.
+              </p>
             </Panel>
           </div>
         </div>

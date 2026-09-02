@@ -36,6 +36,16 @@ export type TeamMember = {
   note: string;
 };
 
+export type CompanyProfile = {
+  legalName: string;
+  registryName: string;
+  businessRegistrationNo: string;
+  status: string;
+  commencedOn: string;
+  issuedOn: string;
+  address: string;
+};
+
 export type EventItem = {
   city: string;
   venue: string;
@@ -46,7 +56,32 @@ export const siteNav = [
   { label: "HOME", href: "/" },
   { label: "TATTOO MACHINES", href: "/collections/machines" },
   { label: "ACCESSORIES", href: "/collections/accessories" },
-  { label: "INFO", href: "/about-us" }
+  { label: "COMPANY", href: "/about-us" }
+];
+
+export const companyProfile: CompanyProfile = {
+  legalName: "SEISHIN CO., LIMITED",
+  registryName: "星辰新國際有限公司",
+  businessRegistrationNo: "77254747-000-10-24-4",
+  status: "Body corporate",
+  commencedOn: "30/10/2024",
+  issuedOn: "9 May 2025",
+  address: "FLAT/RM 602, 6/F, KAI YUE COMMERCIAL BUILDING, No.2C ARGYLE STREET, MONGKOK, KL"
+};
+
+export const companyStrengths = [
+  {
+    title: "Official company record",
+    text: "Hong Kong registration details and business address are ready to surface in a buyer-facing profile."
+  },
+  {
+    title: "Wholesale-first structure",
+    text: "The catalog, inquiry flow, and support pages are arranged for distributors, studios, and resellers."
+  },
+  {
+    title: "Clear product depth",
+    text: "Product families, compare tools, and manuals make the site feel like a proper B2B catalog."
+  }
 ];
 
 export const machineProducts: MachineProduct[] = [
@@ -472,9 +507,9 @@ export const faqSections: FAQSection[] = [
 ];
 
 export const teamMembers: TeamMember[] = [
-  { name: "Mika", role: "Founder / Lead Artist", note: "Focuses on setup consistency and product selection." },
-  { name: "Ava", role: "Ops + Logistics", note: "Handles shipping, availability, and launch stock." },
-  { name: "Jay", role: "Tech Support", note: "Keeps manuals, specs, and support flows readable." }
+  { name: "Mika", role: "Commercial Sales", note: "Supports distributor pricing, account setup, and line planning." },
+  { name: "Ava", role: "Operations", note: "Coordinates stock visibility, packing, and shipment timing." },
+  { name: "Jay", role: "Product Support", note: "Keeps manuals, specs, and technical questions organized." }
 ];
 
 export const eventItems: EventItem[] = [

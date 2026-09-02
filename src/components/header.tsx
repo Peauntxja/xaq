@@ -38,7 +38,7 @@ export function Header() {
         </Link>
         <nav className="ml-auto hidden items-center gap-1 xl:flex">
           {siteNav.map((item) => (
-            item.label === "INFO" ? (
+            item.label === "COMPANY" ? (
               <details key={item.href} className="relative">
                 <summary
                   className={cn(

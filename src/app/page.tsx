@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Eye } from "lucide-react";
-import { machineProducts } from "@/lib/data";
+import { machineProducts, companyProfile, companyStrengths } from "@/lib/data";
 import { Container } from "@/components/ui";
 import { formatPrice } from "@/lib/utils";
 
@@ -23,28 +23,76 @@ export default function HomePage() {
                   HYPER PROFESSIONAL TATTOO ASSORTMENT
                 </p>
                 <h1 className="mt-4 max-w-xl text-4xl font-semibold leading-[1.02] sm:text-5xl lg:text-6xl">
-                  Professional tattoo machines.
+                  Wholesale tattoo machines, presented for B2B buyers.
                 </h1>
                 <p className="mt-4 max-w-lg text-sm leading-6 text-white/80 sm:text-base">
-                  Static demo inventory shaped from your Excel list and the Vlad Blad reference site.
+                  Built for distributors, studios, and regional resellers. The demo combines catalog depth, a Hong
+                  Kong company profile, and an inquiry flow that feels ready for trade conversations.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
-                    href="/collections/all"
+                    href="/pages/contact"
                     className="inline-flex items-center gap-2 rounded-[12px] bg-amber-400 px-4 py-2.5 text-sm font-medium text-ink-950 transition hover:bg-amber-300"
                   >
-                    Shop all
+                    Wholesale inquiry
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
-                    href="/collections/machines"
+                    href="/company-profile.pdf"
                     className="inline-flex items-center gap-2 rounded-[12px] border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-white/15"
                   >
-                    View machines
+                    Download profile
                   </Link>
                 </div>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-stone-300 bg-white">
+        <Container className="py-10 sm:py-12">
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-[14px] border border-stone-200 bg-[#fcfbf8] p-5">
+              <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">LEGAL ENTITY</p>
+              <p className="mt-3 text-lg font-semibold text-ink-950">{companyProfile.legalName}</p>
+              <p className="mt-1 text-sm text-stone-600">{companyProfile.registryName}</p>
+            </div>
+            <div className="rounded-[14px] border border-stone-200 bg-[#fcfbf8] p-5">
+              <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">BUSINESS RECORD</p>
+              <p className="mt-3 text-lg font-semibold text-ink-950">{companyProfile.businessRegistrationNo}</p>
+              <p className="mt-1 text-sm text-stone-600">Issued on {companyProfile.issuedOn}</p>
+            </div>
+            <div className="rounded-[14px] border border-stone-200 bg-[#fcfbf8] p-5">
+              <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">B2B POSITIONING</p>
+              <p className="mt-3 text-lg font-semibold text-ink-950">Wholesale-first catalog and inquiry flow.</p>
+              <p className="mt-1 text-sm text-stone-600">Built for distributors, studios, and resellers who need a tidy, credible first look.</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-stone-300 bg-[#f7f4ee]">
+        <Container className="py-12 sm:py-14">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-medium tracking-[0.24em] text-stone-500">COMPANY STRENGTH</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">
+                A clean way to show the business, not just the products.
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-stone-600">
+                This is where the site can prove it is real enough for wholesale review: official registration details,
+                an address, and a catalog that already behaves like a working sales tool.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+            {companyStrengths.map((item) => (
+              <div key={item.title} className="rounded-[14px] border border-stone-200 bg-white p-5 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+                <p className="text-lg font-semibold text-ink-950">{item.title}</p>
+                <p className="mt-2 text-sm leading-6 text-stone-600">{item.text}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

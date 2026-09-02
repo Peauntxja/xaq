@@ -9,11 +9,11 @@ export function Footer() {
         <div className="space-y-3 md:col-span-2">
           <p className="text-lg font-semibold text-white">Hyper Professional Tattoo Assortment</p>
           <p className="max-w-xl text-sm leading-6 text-stone-300">
-            A premium tattoo equipment demo store rebuilt as a fully static, Vercel-ready experience.
+            A premium tattoo equipment demo store rebuilt as a B2B-ready, Vercel-deployable experience.
           </p>
           <div className="flex flex-wrap gap-2">
-            <Badge>Mock data</Badge>
-            <Badge>Demo checkout</Badge>
+            <Badge>Official profile</Badge>
+            <Badge>Wholesale ready</Badge>
             <Badge>Static deploy</Badge>
           </div>
         </div>

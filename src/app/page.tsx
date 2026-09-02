@@ -1,144 +1,132 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Cable, CheckCircle2, Cpu, Package, ShieldCheck, Star, Truck } from "lucide-react";
-import { Container, Section, Panel, Badge, PageTitle } from "@/components/ui";
-import { machineProducts, accessories, articles, teamMembers, eventItems } from "@/lib/data";
-import { ProductCard, AccessoryCard, ArticleGrid, TeamGrid, EventsList, ProductLines } from "@/components/catalog";
+import { ArrowRight } from "lucide-react";
+import { machineProducts } from "@/lib/data";
+import { Container } from "@/components/ui";
+import { formatPrice } from "@/lib/utils";
+
+const heroImage =
+  "https://hptausa.com/cdn/shop/files/c41e435b6de6e85625463bfe9f77a9f3.png?v=1779331287&width=3840";
 
 export default function HomePage() {
   const featured = machineProducts.slice(0, 4);
 
   return (
-    <>
-      <Section className="border-b border-white/10">
-        <Container className="grid gap-10 py-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-center lg:py-12">
-          <div className="space-y-6">
-            <Badge>Hyper Professional Tattoo Assortment</Badge>
-            <PageTitle
-              title="Professional tattoo machines, organized like a working studio."
-              description="A full mock ecommerce build with the same navigational depth, product pages, and support flows the reference site uses, but powered entirely by static demo data."
-            />
-            <div className="flex flex-wrap gap-3">
-              <Link href="/collections/all" className="inline-flex items-center gap-2 rounded-lg bg-amber-400 px-4 py-2 text-sm font-medium text-stone-950">
-                Shop all <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/products/rs" className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white">
-                View flagship
-              </Link>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                { icon: Cpu, title: "Machine families", text: "Hybrid, rotary, coil, and pen-style mockups." },
-                { icon: ShieldCheck, title: "Support pages", text: "Policies, FAQ, manuals, and contact flows." },
-                { icon: Truck, title: "Vercel ready", text: "Built to ship without a backend." }
-              ].map((item) => (
-                <Panel key={item.title} className="p-4">
-                  <item.icon className="h-5 w-5 text-amber-300" />
-                  <p className="mt-3 font-semibold text-white">{item.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-stone-300">{item.text}</p>
-                </Panel>
-              ))}
-            </div>
-          </div>
-          <Panel className="overflow-hidden">
-            <div className="grid gap-3 p-4">
-              <div className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 bg-ink-900">
-                <img src={machineProducts[3].images[0]} alt={machineProducts[3].name} className="h-full w-full object-cover" />
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Featured product</p>
-                <p className="text-2xl font-semibold text-white">{machineProducts[3].name}</p>
-                <p className="mt-2 text-sm text-stone-300">{machineProducts[3].longSummary}</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 text-sm text-stone-300">
-                <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Price</p>
-                  <p className="mt-1 text-white">$399</p>
-                </div>
-                <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-                  <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Status</p>
-                  <p className="mt-1 text-white">In stock</p>
+    <div className="bg-[#f7f4ee] text-ink-950">
+      <section className="border-b border-stone-300">
+        <Container className="py-6 sm:py-8">
+          <div className="relative overflow-hidden rounded-[20px] border border-stone-300 bg-white">
+            <img src={heroImage} alt="Hyper Professional Tattoo Assortment hero" className="h-[520px] w-full object-cover object-center" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/60" />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
+              <div className="max-w-2xl text-white">
+                <p className="inline-flex rounded-full border border-white/20 bg-black/25 px-3 py-1 text-[11px] font-medium tracking-[0.22em]">
+                  HYPER PROFESSIONAL TATTOO ASSORTMENT
+                </p>
+                <h1 className="mt-4 max-w-xl text-4xl font-semibold leading-[1.02] sm:text-5xl lg:text-6xl">
+                  Professional tattoo machines.
+                </h1>
+                <p className="mt-4 max-w-lg text-sm leading-6 text-white/80 sm:text-base">
+                  Static demo inventory shaped from your Excel list and the Vlad Blad reference site.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <Link
+                    href="/collections/all"
+                    className="inline-flex items-center gap-2 rounded-[12px] bg-amber-400 px-4 py-2.5 text-sm font-medium text-ink-950 transition hover:bg-amber-300"
+                  >
+                    Shop all
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="/collections/machines"
+                    className="inline-flex items-center gap-2 rounded-[12px] border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-white/15"
+                  >
+                    View machines
+                  </Link>
                 </div>
               </div>
             </div>
-          </Panel>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container className="space-y-6">
-          <PageTitle
-            eyebrow="Collections"
-            title="Built to mirror a real store structure."
-            description="The reference layout separates the store into category pages, product pages, support pages, and editorial content. This demo follows the same flow."
-          />
-          <ProductLines />
-        </Container>
-      </Section>
-
-      <Section className="border-t border-white/10">
-        <Container className="space-y-6">
-          <PageTitle eyebrow="Featured machines" title="A compact catalog with the right store controls." />
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {featured.map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
           </div>
         </Container>
-      </Section>
+      </section>
 
-      <Section className="border-t border-white/10">
-        <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="space-y-4">
-            <PageTitle eyebrow="Accessories" title="The empty shelf problem is fixed." />
-            <p className="max-w-xl text-sm leading-6 text-stone-300">
-              The reference site uses accessories as a real category. This build gives you a starter accessory catalog
-              so the page feels alive on day one.
-            </p>
-            <Link href="/collections/accessories" className="inline-flex items-center gap-2 text-sm text-amber-300">
-              Browse accessories <ArrowRight className="h-4 w-4" />
+      <section className="border-b border-stone-300 bg-white">
+        <Container className="py-12 sm:py-14">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-[11px] font-medium tracking-[0.24em] text-stone-500">TATTOO MACHINES</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">
+                Built to feel like a shop, not a brochure.
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-stone-600">
+                The first row follows the reference store&apos;s clean product grid and uses the Excel machines as demo
+                inventory.
+              </p>
+            </div>
+            <Link href="/collections/machines" className="text-sm font-medium text-ink-950 underline underline-offset-4">
+              View all
             </Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {accessories.map((item) => (
-              <AccessoryCard key={item.slug} {...item} />
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {featured.map((product) => (
+              <article key={product.slug} className="overflow-hidden rounded-[14px] border border-stone-200 bg-white">
+                <Link href={`/products/${product.slug}`} className="block aspect-[4/3] bg-stone-100">
+                  <img src={product.images[0]} alt={product.name} className="h-full w-full object-cover" />
+                </Link>
+                <div className="space-y-3 p-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">{product.series}</p>
+                      <Link href={`/products/${product.slug}`} className="mt-1 block text-lg font-semibold text-ink-950 hover:text-stone-700">
+                        {product.name}
+                      </Link>
+                    </div>
+                    <span className="text-sm text-stone-500">{product.status}</span>
+                  </div>
+                  <p className="text-sm leading-6 text-stone-600">{product.summary}</p>
+                  <div className="flex items-center justify-between gap-3 pt-2">
+                    <p className="text-lg font-semibold text-ink-950">{formatPrice(product.price)}</p>
+                    <Link
+                      href={`/products/${product.slug}`}
+                      className="inline-flex items-center gap-2 rounded-[12px] border border-stone-200 px-3 py-2 text-sm font-medium text-ink-950 transition hover:border-amber-400"
+                    >
+                      View
+                    </Link>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
         </Container>
-      </Section>
+      </section>
 
-      <Section className="border-t border-white/10">
-        <Container className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
-          <div className="space-y-6">
-            <PageTitle eyebrow="Support" title="Policies, docs, FAQ, and contact are all present." />
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                { icon: BookOpen, title: "Manuals", text: "Each product links to a manual placeholder or PDF." },
-                { icon: Cable, title: "Shipping", text: "Shipping, return, and terms pages are prebuilt." },
-                { icon: ShieldCheck, title: "Warranty", text: "Support content is ready for a later backend swap." },
-                { icon: CheckCircle2, title: "FAQ", text: "Ordering, delivery, and product info are covered." }
-              ].map((item) => (
-                <Panel key={item.title} className="p-4">
-                  <item.icon className="h-5 w-5 text-teal-300" />
-                  <p className="mt-3 font-semibold text-white">{item.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-stone-300">{item.text}</p>
-                </Panel>
-              ))}
+      <section className="bg-[#f7f4ee]">
+        <Container className="py-12 sm:py-14">
+          <div className="grid gap-6 rounded-[18px] border border-stone-300 bg-white p-6 sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-[11px] font-medium tracking-[0.24em] text-stone-500">JOIN OUR EMAIL LIST</p>
+              <h2 className="mt-3 text-2xl font-semibold text-ink-950">Get launch notes and product updates.</h2>
+              <p className="mt-3 text-sm leading-6 text-stone-600">
+                No backend yet. Just the same signup shape the reference store uses.
+              </p>
             </div>
-          </div>
-          <div className="space-y-4">
-            <PageTitle eyebrow="Studio proof" title="Where the social proof and event content goes." />
-            <TeamGrid members={teamMembers} />
-            <EventsList items={eventItems} />
+            <form className="flex flex-col gap-3 sm:flex-row">
+              <label className="sr-only" htmlFor="newsletter-email">
+                Email address
+              </label>
+              <input
+                id="newsletter-email"
+                type="email"
+                placeholder="Email address"
+                className="h-12 flex-1 rounded-[12px] border border-stone-300 px-4 text-sm text-ink-950 outline-none placeholder:text-stone-400"
+              />
+              <button className="h-12 rounded-[12px] bg-ink-950 px-5 text-sm font-medium text-white transition hover:bg-ink-800">
+                Sign up
+              </button>
+            </form>
           </div>
         </Container>
-      </Section>
-
-      <Section className="border-t border-white/10">
-        <Container className="space-y-6">
-          <PageTitle eyebrow="Reading" title="A lightweight blog and education layer." />
-          <ArticleGrid articles={articles} />
-        </Container>
-      </Section>
-    </>
+      </section>
+    </div>
   );
 }

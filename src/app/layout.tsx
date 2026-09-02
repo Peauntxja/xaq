@@ -6,7 +6,7 @@ import { StoreProvider } from "@/components/store-provider";
 
 export const metadata: Metadata = {
   title: "Hyper Professional Tattoo Assortment",
-  description: "A static demo store rebuilt from reference site research with mock data and full page structure."
+  description: "A static HPTA storefront demo aligned to the Vlad Blad reference structure."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

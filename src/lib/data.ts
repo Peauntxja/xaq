@@ -44,239 +44,321 @@ export type EventItem = {
 
 export const siteNav = [
   { label: "HOME", href: "/" },
-  { label: "STORE", href: "/collections/all" },
-  { label: "MACHINES", href: "/collections/machines" },
+  { label: "TATTOO MACHINES", href: "/collections/machines" },
   { label: "ACCESSORIES", href: "/collections/accessories" },
-  { label: "SALE", href: "/sale" },
-  { label: "ABOUT", href: "/about-us" },
-  { label: "BLOG", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
-  { label: "CONTACT", href: "/pages/contact" }
+  { label: "INFO", href: "/about-us" }
 ];
 
 export const machineProducts: MachineProduct[] = [
   {
-    slug: "j-7",
-    name: "J-7",
-    series: "J Series",
-    type: "Wireless rotary pen",
-    price: 399,
+    slug: "avenger-2-pro",
+    name: "Avenger 2 Pro",
+    series: "Avenger Series",
+    type: "Hybrid / Rotary",
+    price: 1347,
     status: "In stock",
-    accent: "Black / Blue / Green",
-    summary: "Compact wireless machine for clean lining, shading, and everyday studio use.",
+    accent: "Money Maker / Space / Firestarter",
+    summary:
+      "MultiStroke hybrid with six stroke lengths, SkinResponse feedback, and a balanced wired setup for disciplined line and shade work.",
     longSummary:
-      "J-7 is the launch-ready all-rounder in the HPTA lineup. It keeps the body light, the stroke stable, and the battery straightforward so artists can move between lining and shading without a lot of setup noise.",
+      "Avenger 2 Pro is the wired entry in the Avenger family. It keeps the MultiStroke system, the SkinResponse feel, and the recycled aluminum body while staying direct, compact, and easy to explain on a product page.",
     features: [
-      "Aluminum body",
-      "4.0 mm stroke",
-      "Brushless 8V motor",
-      "USB-C charging",
-      "Color variant options"
+      "6 stroke lengths",
+      "SkinResponse feel",
+      "10.5W M2 motor",
+      "Low vibration body",
+      "Classic needle compatible"
     ],
     specs: {
-      Material: "Aluminum",
-      Stroke: "4.0 mm",
-      Motor: "Brushless motor 8V 6500RPM",
-      Battery: "1500 mAh",
-      Charge: "Approx. 2.5 hours",
-      Runtime: "Approx. 4.5 hours at 8V",
-      Voltage: "4-12V",
-      Charging: "USB-C"
+      Stroke: "3.2 / 3.5 / 3.8 / 4.2 / 4.7 / 5.5 mm",
+      Motor: "10.5W M2",
+      Weight: "135 g",
+      Compatibility: "Classic needles and cartridges",
+      Material: "Recycled aluminum parts"
     },
-    colors: ["Black", "Blue", "Green"],
-    images: [
-      "https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600",
-      "https://hptausa.com/cdn/shop/files/J73.png?v=1783313487&width=1600",
-      "https://hptausa.com/cdn/shop/files/J75.png?v=1783313487&width=1600",
-      "https://hptausa.com/cdn/shop/files/J71.png?v=1783313486&width=1600"
-    ],
-    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
-    compareTag: "Wireless entry machine",
-    category: "machines"
-  },
-  {
-    slug: "l-9",
-    name: "L-9",
-    series: "L Series",
-    type: "Rotary pen",
-    price: 399,
-    status: "In stock",
-    accent: "Brown / Black / Purple",
-    summary: "Balanced pen machine with a slightly more assertive feel for line-heavy work.",
-    longSummary:
-      "L-9 keeps the same clean product language as J-7 but leans a little more into linework confidence. It is meant for artists who want a simple daily driver with a visibly different colorway story.",
-    features: ["Aluminum frame", "4.0 mm stroke", "Brushless motor", "Color variants", "Manual included"],
-    specs: {
-      Material: "Aluminum",
-      Stroke: "4.0 mm",
-      Motor: "Brushless motor 8V 6500RPM",
-      Battery: "1500 mAh",
-      Charge: "Approx. 2.5 hours",
-      Runtime: "Approx. 4.5 hours at 8V",
-      Voltage: "4-12V",
-      Charging: "USB-C"
-    },
-    colors: ["Brown", "Black", "Purple"],
-    images: [
-      "https://hptausa.com/cdn/shop/files/L93.png?v=1783313488&width=1600",
-      "https://hptausa.com/cdn/shop/files/Box_L9.png?v=1783475149&width=1600"
-    ],
-    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
-    compareTag: "Balanced daily driver",
-    category: "machines"
-  },
-  {
-    slug: "p-8",
-    name: "P-8",
-    series: "P Series",
-    type: "Rotary pen",
-    price: 399,
-    status: "In stock",
-    accent: "Silver / Gold / Brown",
-    summary: "More premium-looking chassis with a versatile feel for shading and packing.",
-    longSummary:
-      "P-8 sits in the same launch family but reads as the more premium visual option. The colors and packaging are tuned for artists who want something a little more showroom-ready.",
-    features: ["Aluminum body", "USB-C charging", "Reliable motor", "Premium finish", "Manual included"],
-    specs: {
-      Material: "Aluminum",
-      Stroke: "4.0 mm",
-      Motor: "Brushless motor 8V 6500RPM",
-      Battery: "1500 mAh",
-      Charge: "Approx. 2.5 hours",
-      Runtime: "Approx. 4.5 hours at 8V",
-      Voltage: "4-12V",
-      Charging: "USB-C"
-    },
-    colors: ["Silver", "Gold", "Brown"],
-    images: [
-      "https://hptausa.com/cdn/shop/files/P82.png?v=1783313488&width=1600",
-      "https://hptausa.com/cdn/shop/files/P81.png?v=1783313490&width=1600",
-      "https://hptausa.com/cdn/shop/files/P83.png?v=1783313487&width=1600",
-      "https://hptausa.com/cdn/shop/files/Box_P8.png?v=1783475150&width=1600"
-    ],
-    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
-    compareTag: "Premium finish rotary",
-    category: "machines"
-  },
-  {
-    slug: "rs",
-    name: "RS",
-    series: "RS Series",
-    type: "Wireless rotary with OLED display",
-    price: 399,
-    status: "In stock",
-    accent: "Red / Silver / Black",
-    summary: "Most feature-rich mock machine in the current HPTA lineup with OLED readout and longer stroke range.",
-    longSummary:
-      "RS is the page that carries the richest spec stack. It provides the clearest demo of how the shop can present a more technical flagship machine with richer documentation and long-form product copy.",
-    features: [
-      "7 stroke positions",
-      "OLED high-definition color screen",
-      "1800 mAh battery",
-      "Approx. 8 hour runtime",
-      "USB-C charging"
-    ],
-    specs: {
-      Material: "Aluminum",
-      "Stroke Length": "2.4 / 2.7 / 3.0 / 3.3 / 3.6 / 3.9 / 4.2 mm",
-      Motor: "8V, 6500RPM",
-      Display: "OLED High-Definition Color Screen",
-      Voltage: "4-12V",
-      "Input Voltage": "DC 5V / 1-2 A",
-      Charging: "USB-C",
-      "Battery Capacity": "1800 mAh",
-      "Charge Time": "Approx. 2.5 hours",
-      "Average Run Time": "Approx. 8 hours",
-      "Net Weight": "275 g",
-      Size: "φ37 × 141 mm"
-    },
-    colors: ["Red", "Silver", "Black"],
+    colors: ["Money Maker", "Space", "Firestarter", "Cosmic Magic"],
     images: [
       "https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600",
       "https://hptausa.com/cdn/shop/files/J73.png?v=1783313487&width=1600",
       "https://hptausa.com/cdn/shop/files/J75.png?v=1783313487&width=1600"
     ],
     manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
-    compareTag: "Flagship mockup",
+    compareTag: "Wired hybrid starter",
+    category: "machines"
+  },
+  {
+    slug: "avenger-3-pro",
+    name: "Avenger 3 Pro",
+    series: "Avenger Series",
+    type: "Wireless Hybrid / Rotary",
+    price: 1477,
+    status: "Pre-order",
+    accent: "Money Maker / Nickel / Old Petroleum",
+    summary:
+      "Wireless Avenger with MultiStroke control, improved ergonomics, and a premium finish story for limited editions.",
+    longSummary:
+      "Avenger 3 Pro moves the Avenger language into a wireless body. It keeps the six stroke modes and the SkinResponse idea, then layers in the visual language of the limited editions and colorway-heavy variants.",
+    features: [
+      "Wireless runtime",
+      "6 stroke modes",
+      "M3Pro motor",
+      "Ergonomic grip",
+      "Limited editions"
+    ],
+    specs: {
+      Stroke: "3.2 / 3.5 / 3.8 / 4.2 / 4.7 / 5.5 mm",
+      Motor: "M3Pro",
+      Runtime: "5-8+ hours",
+      Weight: "Varies by model",
+      Finish: "Multiple colorways"
+    },
+    colors: ["Money Maker", "Nickel", "Old Petroleum", "Space", "Cosmic Magic"],
+    images: [
+      "https://hptausa.com/cdn/shop/files/J73.png?v=1783313487&width=1600",
+      "https://hptausa.com/cdn/shop/files/J75.png?v=1783313487&width=1600",
+      "https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600"
+    ],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Wireless premium",
     category: "machines"
   },
   {
     slug: "avenger-4-pro",
     name: "Avenger 4 Pro",
-    series: "Avenger",
-    type: "Wireless hybrid / rotary",
-    price: 1347,
-    status: "Pre-order",
-    accent: "Money Maker / Space / Firestarter / Cosmic Magic",
-    summary: "Reference-style flagship with stroke switching and adaptive hit control.",
+    series: "Avenger Series",
+    type: "Wireless Hybrid / Rotary",
+    price: 1597,
+    status: "In stock",
+    accent: "Morning Champagne / Blackout / Firestarter",
+    summary:
+      "Newest Avenger flagship with six stroke modes, Antigravity balance, and the cleanest long-session story in the range.",
     longSummary:
-      "Avenger 4 Pro is presented as the top-end reference machine: stroke switching, adaptive hit behavior, and a premium build story. It anchors the more advanced part of the catalog.",
-    features: ["6 stroke modes", "Adaptive hit control", "USB-C removable battery", "Premium materials", "Artist finishes"],
+      "Avenger 4 Pro is the pinnacle machine in the Avenger family. It keeps the fast stroke switching, adds the Anti-Gravity system, and presents the most polished story for the range.",
+    features: [
+      "6 stroke modes",
+      "Anti-Gravity system",
+      "M3Pro brushless motor",
+      "Universal cartridge compatibility",
+      "Lightweight balance"
+    ],
     specs: {
       Stroke: "3.2 / 3.5 / 3.8 / 4.2 / 4.7 / 5.5 mm",
-      Battery: "2400 / 4000 mAh Li-ion",
-      Runtime: "Up to 13 / 22 hours",
-      Motor: "M3Pro 12.6 W",
-      Weight: "119 g without battery cap",
-      Size: "119 mm long body",
-      Control: "3 physical buttons, Start-Stop mode"
+      Motor: "M3Pro brushless",
+      Control: "3 physical buttons",
+      Weight: "Lightweight balanced design",
+      Finish: "Multiple colorways"
     },
-    colors: ["Money Maker", "Space", "Firestarter", "Cosmic Magic"],
-    images: ["https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600"],
-    manualUrl: "https://vladblad.com",
-    compareTag: "Reference flagship",
+    colors: ["Morning Champagne", "Blackout", "Firestarter", "Space"],
+    images: [
+      "https://hptausa.com/cdn/shop/files/J71.png?v=1783313486&width=1600",
+      "https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600",
+      "https://hptausa.com/cdn/shop/files/J75.png?v=1783313487&width=1600"
+    ],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Flagship hybrid",
+    category: "machines"
+  },
+  {
+    slug: "ultron-2",
+    name: "Ultron 2",
+    series: "Ultron Series",
+    type: "Rotary Pen",
+    price: 499,
+    status: "In stock",
+    accent: "Classic Light / Big Light / Premium Heavy Grip",
+    summary:
+      "Lightweight reliable pen for lining, solid black, and daily use with a clear grip story.",
+    longSummary:
+      "Ultron 2 is the classic pen-style machine in the lineup. It keeps the form factor familiar, adds grip choices, and stays approachable as the long-term daily driver for the catalog.",
+    features: ["Lightweight body", "3 grip options", "Reliable lining", "Dotwork friendly", "Wired setup"],
+    specs: {
+      Material: "Aluminum",
+      Weight: "Varies by grip",
+      Use: "Lining and black work",
+      Mount: "Classic pen format"
+    },
+    colors: ["Classic Light", "Big Light", "Premium Heavy Grip"],
+    images: [
+      "https://hptausa.com/cdn/shop/files/L93.png?v=1783313488&width=1600",
+      "https://hptausa.com/cdn/shop/files/Box_L9.png?v=1783475149&width=1600"
+    ],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Classic pen driver",
+    category: "machines"
+  },
+  {
+    slug: "ultron-3",
+    name: "Ultron 3",
+    series: "Ultron Series",
+    type: "Wireless Rotary Pen",
+    price: 699,
+    status: "In stock",
+    accent: "Money Maker / Nickel / Space / Firestarter",
+    summary:
+      "Compact wireless pen with low vibration, Hall effect sensors, and a balanced center of gravity near the grip.",
+    longSummary:
+      "Ultron 3 is the wireless leap in the Ultron family. It is compact, low vibration, and tuned to read like the everyday premium pen that still feels technical without becoming heavy.",
+    features: [
+      "Wireless operation",
+      "12.6W brushless motor",
+      "Hall effect sensors",
+      "5-8+ hour battery",
+      "Fast charging"
+    ],
+    specs: {
+      Motor: "Brushless 12.6W",
+      Battery: "5-8+ hours",
+      Weight: "~190-200 g typical",
+      Balance: "Center of gravity near grip",
+      Finish: "Multiple artist editions"
+    },
+    colors: ["Money Maker", "Nickel", "Space", "Firestarter", "Camo"],
+    images: [
+      "https://hptausa.com/cdn/shop/files/P82.png?v=1783313488&width=1600",
+      "https://hptausa.com/cdn/shop/files/P81.png?v=1783313490&width=1600",
+      "https://hptausa.com/cdn/shop/files/P83.png?v=1783313487&width=1600"
+    ],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Wireless daily driver",
     category: "machines"
   },
   {
     slug: "ultron-4-pro",
     name: "Ultron 4 Pro",
-    series: "Ultron",
-    type: "Wireless rotary pen",
-    price: 1427,
+    series: "Ultron Series",
+    type: "Wireless Rotary Pen",
+    price: 899,
     status: "In stock",
     accent: "Morning Champagne / Blackout / Firestarter",
-    summary: "All-in-one pen with multi-stroke control and a strong premium positioning.",
+    summary:
+      "Flagship all-in-one pen with MultiStroke, SmartHit response, and the biggest technical stack in the range.",
     longSummary:
-      "Ultron 4 Pro is the product page that best carries the rich technical narrative. It is meant for artists who expect a premium pen, long battery life, and detailed performance breakdowns.",
-    features: ["MultiStroke system", "SmartHit adaptive response", "DirectPower motor", "4000 mAh battery", "22 hour runtime"],
+      "Ultron 4 Pro is the most complete pen in the current range. It combines MultiStroke, SmartHit, DirectPower, and a 4000 mAh battery into one polished demo machine.",
+    features: [
+      "MultiStroke system",
+      "SmartHit adaptive modes",
+      "DirectPower motor",
+      "4000 mAh battery",
+      "Up to 22 hours runtime"
+    ],
     specs: {
-      "Stroke Range": "3.2 / 3.5 / 3.8 / 4.2 / 4.7 / 5.5 mm",
-      "SmartHit Modes": "Stable, Soft 1-3, Sharp 1-3",
+      Stroke: "3.2 / 3.5 / 3.8 / 4.2 / 4.7 / 5.5 mm",
       Motor: "M3Ultra with DirectPower",
       Battery: "4000 mAh",
       Runtime: "Up to 22 hours",
-      Weight: "272 g",
-      Size: "118 × 36-40 mm"
+      Weight: "272 g"
     },
     colors: ["Morning Champagne", "Blackout", "Firestarter"],
-    images: ["https://hptausa.com/cdn/shop/files/P82.png?v=1783313488&width=1600"],
-    manualUrl: "https://vladblad.com",
-    compareTag: "Long-runtime premium pen",
+    images: [
+      "https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600",
+      "https://hptausa.com/cdn/shop/files/J73.png?v=1783313487&width=1600",
+      "https://hptausa.com/cdn/shop/files/J75.png?v=1783313487&width=1600"
+    ],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Flagship pen",
     category: "machines"
   },
   {
     slug: "fine-liner-pro",
     name: "Fine Liner Pro",
-    series: "Coil",
-    type: "Coil machine",
-    price: 549,
+    series: "Coil Series",
+    type: "Coil",
+    price: 399,
     status: "In stock",
     accent: "Blood Money / Old Petroleum / Bubble Gum",
-    summary: "Fine line specialist with clear, crisp line control.",
+    summary:
+      "Premium coil liner tuned for sharp, controlled one-pass lines and a precise skin feel.",
     longSummary:
-      "Fine Liner Pro is the coil-side answer for artists who still value the feel of a tuned liner. It is clean, technical, and intentionally tuned toward crisp linework.",
-    features: ["Steel frame", "SuperJaws vise", "Needle stabilizer", "Longlife monospring", "Factory tuned"],
+      "Fine Liner Pro keeps the coil feel in the catalog. It is tuned for fine to medium linework, makes the frame story visible, and stays purpose-built instead of trying to do everything at once.",
+    features: ["Steel frame", "SuperJaws vise", "Needle stabilizer", "Longlife Monospring", "Factory tuned"],
     specs: {
-      Weight: "198 g",
+      Weight: "198-199 g",
       Frame: "Premium steel",
       Lines: "3-9RL",
       Connector: "Built-in RCA",
-      Feedback: "Non-traumatic controlled hit"
+      Feedback: "Controlled hit"
     },
     colors: ["Blood Money", "Old Petroleum", "Bubble Gum"],
     images: ["https://hptausa.com/cdn/shop/files/L93.png?v=1783313488&width=1600"],
-    manualUrl: "https://vladblad.com",
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
     compareTag: "Fine line coil",
+    category: "machines"
+  },
+  {
+    slug: "infinite-liner-pro",
+    name: "Infinite Liner Pro",
+    series: "Coil Series",
+    type: "Coil",
+    price: 429,
+    status: "Best seller",
+    accent: "Vamp / Money Maker / Blood Money",
+    summary:
+      "Legendary medium-to-big grouping liner with a powerful controlled hit and stable frame geometry.",
+    longSummary:
+      "Infinite Liner Pro is the stronger coil liner in the range. It is built for bigger groupings, carries the same Pro-series hardware story, and makes the lineup feel broader than a single pen family.",
+    features: ["7-18+RL", "Balanced frame geometry", "SuperJaws vise", "Precision armature bar", "Factory pre-tuned"],
+    specs: {
+      Weight: "199 g",
+      Frame: "Premium steel",
+      Use: "Medium to big line groupings",
+      Connector: "Built-in RCA",
+      Feedback: "Sharp and controlled"
+    },
+    colors: ["Vamp", "Money Maker", "Blood Money", "Old Petroleum"],
+    images: ["https://hptausa.com/cdn/shop/files/J72.png?v=1783313488&width=1600"],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Legendary liner",
+    category: "machines"
+  },
+  {
+    slug: "blacker-packer-pro",
+    name: "Blacker Packer Pro",
+    series: "Coil Series",
+    type: "Coil",
+    price: 449,
+    status: "In stock",
+    accent: "Blood Money / Old Petroleum / Bubble Gum",
+    summary:
+      "A packing-focused coil built for fast solid black and color work with larger needle groupings.",
+    longSummary:
+      "Blacker Packer Pro is the dedicated packing coil in the series. It gives the catalog a heavier black-and-fill posture and keeps the pages from feeling like every machine does the same job.",
+    features: ["7-25+M needles", "Packing-focused", "SuperJaws vise", "Needle stabilizer", "Non-traumatic hit"],
+    specs: {
+      Weight: "~212 g",
+      Frame: "Premium steel",
+      Use: "Color packing and solid black",
+      Connector: "Built-in RCA",
+      Feedback: "Fast controlled hit"
+    },
+    colors: ["Blood Money", "Old Petroleum", "Bubble Gum"],
+    images: ["https://hptausa.com/cdn/shop/files/P82.png?v=1783313488&width=1600"],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Packing specialist",
+    category: "machines"
+  },
+  {
+    slug: "ultron-pen",
+    name: "Ultron Pen",
+    series: "Ultron Series",
+    type: "Rotary Pen",
+    price: 349,
+    status: "Low stock",
+    accent: "Black / Silver / Grey",
+    summary:
+      "Compact classic pen for thin lines, dense color packing, whip shading, and a broad needle range.",
+    longSummary:
+      "Ultron Pen gives the catalog a compact, classic option. It is the lightest page in the family, useful for smaller hand feel and for artists who want a simple pen without extra ceremony.",
+    features: ["Compact body", "Thin to large needles", "Whip shading", "Autoclavable grips", "Simple daily use"],
+    specs: {
+      Body: "23.5 mm diameter",
+      Weight: "~78.5 g without grip",
+      Grip: "~104 g with thin grip",
+      Use: "3-18RL and packing"
+    },
+    colors: ["Black", "Silver", "Grey"],
+    images: ["https://hptausa.com/cdn/shop/files/J71.png?v=1783313486&width=1600"],
+    manualUrl: "https://cdn.shopify.com/s/files/1/0980/8628/9712/files/Instruction_Manual.pdf?v=1783400220",
+    compareTag: "Compact classic pen",
     category: "machines"
   }
 ];

@@ -2,90 +2,135 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Heart, Menu, Search, ShoppingCart, Scale } from "lucide-react";
+import { Menu, Search, ShoppingCart, UserRound, ChevronDown } from "lucide-react";
 import { siteNav } from "@/lib/data";
-import { Container, Badge, Button } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { useStore } from "@/components/store-provider";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
-  const { cartCount, wishlist, compare } = useStore();
+  const { cartCount } = useStore();
+
+  const infoLinks = [
+    { label: "ABOUT", href: "/about-us" },
+    { label: "FAQ", href: "/faq" },
+    { label: "CONTACT", href: "/pages/contact" },
+    { label: "POLICIES", href: "/policies/privacy-policy" }
+  ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-ink-950/92 backdrop-blur">
-      <div className="border-b border-white/5 bg-ink-900/80">
+    <header className="sticky top-0 z-50 border-b border-stone-200 bg-white/95 backdrop-blur">
+      <div className="border-b border-stone-200 bg-stone-50">
         <Container className="flex items-center justify-between py-2">
-          <p className="text-xs uppercase tracking-[0.24em] text-stone-300">Welcome to our store</p>
-          <div className="hidden gap-3 text-xs text-stone-400 sm:flex">
-            <span>Free shipping above $499</span>
-            <span>•</span>
-            <span>Demo data only</span>
-          </div>
+          <p className="text-[11px] font-medium tracking-[0.24em] text-stone-500">WELCOME TO OUR STORE</p>
+          <p className="hidden text-[11px] text-stone-500 sm:block">Free shipping above $499</p>
         </Container>
       </div>
-      <Container className="flex items-center gap-4 py-4">
+      <Container className="flex items-center gap-4 py-3 lg:py-4">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-sm font-semibold text-amber-300">
-            H
-          </div>
-          <div>
-            <p className="text-sm font-semibold tracking-wide text-white">Hyper Professional Tattoo Assortment</p>
-            <p className="text-xs text-stone-400">Machines, accessories, and support</p>
-          </div>
+          <img
+            src="https://hptausa.com/cdn/shop/files/HPTA.jpg?v=1779331648&width=500"
+            alt="Hyper Professional Tattoo Assortment"
+            className="h-9 w-auto object-contain"
+          />
+          <span className="sr-only">Hyper Professional Tattoo Assortment</span>
         </Link>
-        <nav className="ml-auto hidden items-center gap-1 lg:flex">
+        <nav className="ml-auto hidden items-center gap-1 xl:flex">
           {siteNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "rounded-lg px-3 py-2 text-sm text-stone-300 transition hover:bg-white/8 hover:text-white",
-                pathname === item.href && "bg-white/8 text-white"
-              )}
-            >
-              {item.label}
-            </Link>
+            item.label === "INFO" ? (
+              <details key={item.href} className="relative">
+                <summary
+                  className={cn(
+                    "flex list-none items-center gap-1 rounded-[12px] px-3 py-2 text-[13px] font-medium tracking-[0.08em] text-stone-700 transition hover:bg-stone-100 hover:text-ink-950",
+                    pathname === item.href && "bg-stone-100 text-ink-950"
+                  )}
+                >
+                  {item.label}
+                  <ChevronDown className="h-3.5 w-3.5" />
+                </summary>
+                <div className="absolute left-0 mt-2 w-48 rounded-[14px] border border-stone-200 bg-white p-2 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                  <div className="grid gap-1">
+                    {infoLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="rounded-[10px] px-3 py-2 text-sm text-stone-700 transition hover:bg-stone-100 hover:text-ink-950"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </details>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "rounded-[12px] px-3 py-2 text-[13px] font-medium tracking-[0.08em] text-stone-700 transition hover:bg-stone-100 hover:text-ink-950",
+                  pathname === item.href && "bg-stone-100 text-ink-950"
+                )}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <Link href="/search">
-            <Button variant="ghost" aria-label="Search">
-              <Search className="h-4 w-4" />
-            </Button>
+        <div className="ml-auto hidden items-center gap-2 xl:flex">
+          <Link
+            href="/search"
+            aria-label="Search"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-stone-200 text-stone-700 transition hover:bg-stone-100 hover:text-ink-950"
+          >
+            <Search className="h-4 w-4" />
           </Link>
-          <Link href="/wishlist">
-            <Button variant="ghost" aria-label="Wishlist">
-              <Heart className="h-4 w-4" />
-              <Badge className="border-white/15 bg-white/5 px-2 py-0 text-[10px] normal-case tracking-normal text-stone-200">
-                {wishlist.length}
-              </Badge>
-            </Button>
+          <Link
+            href="/account"
+            aria-label="Account"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-stone-200 text-stone-700 transition hover:bg-stone-100 hover:text-ink-950"
+          >
+            <UserRound className="h-4 w-4" />
           </Link>
-          <Link href="/compare-products">
-            <Button variant="ghost" aria-label="Compare">
-              <Scale className="h-4 w-4" />
-              <Badge className="border-white/15 bg-white/5 px-2 py-0 text-[10px] normal-case tracking-normal text-stone-200">
-                {compare.length}
-              </Badge>
-            </Button>
+          <Link
+            href="/shopping-cart"
+            aria-label="Cart"
+            className="inline-flex h-10 items-center gap-2 rounded-[12px] bg-amber-400 px-4 text-sm font-medium text-ink-950 transition hover:bg-amber-300"
+          >
+            <ShoppingCart className="h-4 w-4" />
+            Cart {cartCount}
           </Link>
-          <Link href="/shopping-cart">
-            <Button variant="primary" aria-label="Cart">
-              <ShoppingCart className="h-4 w-4" />
-              Cart {cartCount}
-            </Button>
+        </div>
+        <div className="ml-auto flex items-center gap-2 xl:hidden">
+          <Link
+            href="/search"
+            aria-label="Search"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-stone-200 text-stone-700 transition hover:bg-stone-100 hover:text-ink-950"
+          >
+            <Search className="h-4 w-4" />
           </Link>
-          <details className="relative lg:hidden">
-            <summary className="list-none">
-              <Button variant="ghost" aria-label="Menu">
-                <Menu className="h-4 w-4" />
-              </Button>
+          <Link
+            href="/shopping-cart"
+            aria-label="Cart"
+            className="inline-flex h-10 items-center gap-2 rounded-[12px] bg-amber-400 px-4 text-sm font-medium text-ink-950 transition hover:bg-amber-300"
+          >
+            <ShoppingCart className="h-4 w-4" />
+            {cartCount}
+          </Link>
+          <details className="relative">
+            <summary className="list-none inline-flex h-10 w-10 items-center justify-center rounded-[12px] border border-stone-200 text-stone-700 transition hover:bg-stone-100 hover:text-ink-950">
+              <Menu className="h-4 w-4" />
             </summary>
-            <div className="absolute right-0 mt-2 w-64 rounded-xl border border-white/10 bg-ink-900 p-2 shadow-glow">
-              <div className="flex flex-col">
+            <div className="absolute right-0 mt-2 w-72 rounded-[14px] border border-stone-200 bg-white p-2 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+              <div className="grid gap-1">
                 {siteNav.map((item) => (
-                  <Link key={item.href} href={item.href} className="rounded-lg px-3 py-2 text-sm text-stone-200 hover:bg-white/8">
+                  <Link key={item.href} href={item.href} className="rounded-[10px] px-3 py-2 text-sm text-stone-700 hover:bg-stone-100 hover:text-ink-950">
+                    {item.label}
+                  </Link>
+                ))}
+                <div className="my-1 h-px bg-stone-200" />
+                {infoLinks.map((item) => (
+                  <Link key={item.href} href={item.href} className="rounded-[10px] px-3 py-2 text-sm text-stone-700 hover:bg-stone-100 hover:text-ink-950">
                     {item.label}
                   </Link>
                 ))}

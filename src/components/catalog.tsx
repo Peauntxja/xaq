@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Heart, Scale, ShoppingCart, ArrowUpDown, Search } from "lucide-react";
+import { ChevronLeft, ChevronRight, Heart, Scale, ShoppingCart, ArrowUpDown, Search, ArrowRight } from "lucide-react";
 import { machineProducts, accessories, type MachineProduct, type Article, type FAQSection } from "@/lib/data";
 import { Button, Panel, Badge, FieldLabel } from "@/components/ui";
 import { formatPrice } from "@/lib/utils";
@@ -352,9 +352,9 @@ export function EventsList({ items }: { items: Array<{ city: string; venue: stri
 }
 
 export function StoreSummary() {
-  const { cart, wishlist, compare } = useStore();
+  const { cart, wishlist, compare, orders } = useStore();
   return (
-    <Panel className="grid gap-4 p-4 sm:grid-cols-3">
+    <Panel className="grid gap-4 p-4 sm:grid-cols-4">
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Cart</p>
         <p className="text-2xl font-semibold text-white">{cart.length}</p>
@@ -366,6 +366,10 @@ export function StoreSummary() {
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Compare</p>
         <p className="text-2xl font-semibold text-white">{compare.length}</p>
+      </div>
+      <div>
+        <p className="text-xs uppercase tracking-[0.2em] text-stone-500">Orders</p>
+        <p className="text-2xl font-semibold text-white">{orders.length}</p>
       </div>
     </Panel>
   );
@@ -450,7 +454,15 @@ export function CartView() {
   const total = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
 
   if (!items.length) {
-    return <Panel className="p-6 text-sm text-stone-300">Your cart is empty.</Panel>;
+    return (
+      <Panel className="space-y-4 p-6 text-sm text-stone-300">
+        <p>Your cart is empty.</p>
+        <Link href="/collections/all" className="inline-flex items-center gap-2 text-amber-300">
+          Continue shopping
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </Panel>
+    );
   }
 
   return (
@@ -488,6 +500,12 @@ export function CartView() {
         <p className="text-sm text-stone-300">Total</p>
         <div className="flex items-center gap-3">
           <p className="text-xl font-semibold text-white">{formatPrice(total)}</p>
+          <Link
+            href="/checkout"
+            className="inline-flex items-center justify-center rounded-lg bg-amber-400 px-4 py-2 text-sm font-medium text-stone-950 transition hover:bg-amber-300"
+          >
+            Checkout
+          </Link>
           <Button variant="secondary" onClick={clearCart}>
             Clear cart
           </Button>

@@ -11,8 +11,34 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                var targets = [
+                  'data-immersive-translate-page-theme',
+                  'data-new-gr-c-s-check-loaded',
+                  'data-gr-ext-installed',
+                  'cz-shortcut-listen'
+                ];
+
+                function strip(node) {
+                  if (!node || !node.removeAttribute) return;
+                  for (var i = 0; i < targets.length; i += 1) {
+                    node.removeAttribute(targets[i]);
+                  }
+                }
+
+                strip(document.documentElement);
+                strip(document.body);
+              })();
+            `
+          }}
+        />
+      </head>
+      <body suppressHydrationWarning>
         <StoreProvider>
           <Header />
           <main>{children}</main>

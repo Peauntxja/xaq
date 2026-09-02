@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SplitHero, CatalogSection, TeamGrid } from "@/components/page-blocks";
 import { Panel } from "@/components/ui";
+import { BrochureGallery } from "@/components/brochure-gallery";
 import { companyProfile, companyStrengths, brochureAssets, factoryMetrics, teamMembers } from "@/lib/data";
 
 export default function AboutPage() {
@@ -62,7 +63,7 @@ export default function AboutPage() {
         </div>
       </CatalogSection>
       <CatalogSection title="Brochure preview" description="The new company brochure brings factory photos and scale into the website." >
-        <div id="brochure" className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div id="brochure" className="space-y-6">
           <Panel className="space-y-4 p-5">
             <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">BROCHURE</p>
             <p className="text-lg font-semibold text-ink-950">A visual proof set for B2B buyers.</p>
@@ -85,17 +86,7 @@ export default function AboutPage() {
               Download company PDF
             </a>
           </Panel>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {brochureAssets.map((asset, index) => (
-              <Panel key={asset.title} className={index === 0 ? "overflow-hidden sm:row-span-2" : "overflow-hidden"}>
-                <img src={asset.image} alt={asset.title} className="h-full w-full object-cover" />
-                <div className="border-t border-stone-200 bg-white p-4">
-                  <p className="text-sm font-semibold text-ink-950">{asset.title}</p>
-                  <p className="mt-1 text-sm leading-6 text-stone-600">{asset.caption}</p>
-                </div>
-              </Panel>
-            ))}
-          </div>
+          <BrochureGallery assets={brochureAssets} />
         </div>
       </CatalogSection>
       <CatalogSection title="Commercial team" description="The people behind the demo store and wholesale flow.">

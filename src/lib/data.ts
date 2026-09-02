@@ -46,6 +46,12 @@ export type CompanyProfile = {
   address: string;
 };
 
+export type BrochureAsset = {
+  title: string;
+  caption: string;
+  image: string;
+};
+
 export type EventItem = {
   city: string;
   venue: string;
@@ -82,6 +88,31 @@ export const companyStrengths = [
     title: "Clear product depth",
     text: "Product families, compare tools, and manuals make the site feel like a proper B2B catalog."
   }
+];
+
+export const brochureAssets: BrochureAsset[] = [
+  {
+    title: "Cover + headquarters",
+    caption: "A brochure cover that immediately shows factory scale and brand presence.",
+    image: "/brochure/cover.png"
+  },
+  {
+    title: "Office + factory footprint",
+    caption: "A combined view of office space and the 7500m² factory floor.",
+    image: "/brochure/factory.png"
+  },
+  {
+    title: "Workshop + QC",
+    caption: "Assembly lines, inspection stations, and the quality-control process.",
+    image: "/brochure/workshop-qc.png"
+  }
+];
+
+export const factoryMetrics = [
+  { value: "7500m²", label: "Factory space" },
+  { value: "100+", label: "Employees" },
+  { value: "2000", label: "Origin in tattoo culture" },
+  { value: "QC", label: "Dedicated inspection" }
 ];
 
 export const machineProducts: MachineProduct[] = [

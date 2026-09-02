@@ -14,6 +14,7 @@ export function Header() {
 
   const infoLinks = [
     { label: "ABOUT", href: "/about-us" },
+    { label: "BROCHURE", href: "/about-us#brochure" },
     { label: "FAQ", href: "/faq" },
     { label: "CONTACT", href: "/pages/contact" },
     { label: "POLICIES", href: "/policies/privacy-policy" }

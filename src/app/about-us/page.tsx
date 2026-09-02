@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SplitHero, CatalogSection, TeamGrid } from "@/components/page-blocks";
 import { Panel } from "@/components/ui";
-import { companyProfile, companyStrengths, teamMembers } from "@/lib/data";
+import { companyProfile, companyStrengths, brochureAssets, factoryMetrics, teamMembers } from "@/lib/data";
 
 export default function AboutPage() {
   return (
@@ -58,6 +58,43 @@ export default function AboutPage() {
                 Download PDF
               </Link>
             </Panel>
+          </div>
+        </div>
+      </CatalogSection>
+      <CatalogSection title="Brochure preview" description="The new company brochure brings factory photos and scale into the website." >
+        <div id="brochure" className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <Panel className="space-y-4 p-5">
+            <p className="text-[11px] font-medium tracking-[0.22em] text-stone-500">BROCHURE</p>
+            <p className="text-lg font-semibold text-ink-950">A visual proof set for B2B buyers.</p>
+            <p className="text-sm leading-6 text-stone-600">
+              The brochure gives the site a stronger first impression by showing the office, factory floor, assembly
+              area, and quality inspection process in a format that feels like a real company deck.
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              {factoryMetrics.map((item) => (
+                <div key={item.label} className="rounded-[12px] border border-stone-200 bg-[#fcfbf8] p-4">
+                  <p className="text-xl font-semibold text-ink-950">{item.value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-stone-500">{item.label}</p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="/company-profile.pdf"
+              className="inline-flex items-center justify-center rounded-full bg-ink-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-ink-800"
+            >
+              Download company PDF
+            </a>
+          </Panel>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {brochureAssets.map((asset, index) => (
+              <Panel key={asset.title} className={index === 0 ? "overflow-hidden sm:row-span-2" : "overflow-hidden"}>
+                <img src={asset.image} alt={asset.title} className="h-full w-full object-cover" />
+                <div className="border-t border-stone-200 bg-white p-4">
+                  <p className="text-sm font-semibold text-ink-950">{asset.title}</p>
+                  <p className="mt-1 text-sm leading-6 text-stone-600">{asset.caption}</p>
+                </div>
+              </Panel>
+            ))}
           </div>
         </div>
       </CatalogSection>

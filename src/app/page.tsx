@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Eye } from "lucide-react";
-import { machineProducts, companyProfile, companyStrengths } from "@/lib/data";
+import { machineProducts, companyProfile, companyStrengths, brochureAssets, factoryMetrics } from "@/lib/data";
 import { Container } from "@/components/ui";
 import { formatPrice } from "@/lib/utils";
 
@@ -93,6 +93,55 @@ export default function HomePage() {
                 <p className="mt-2 text-sm leading-6 text-stone-600">{item.text}</p>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-stone-300 bg-white">
+        <Container className="grid gap-8 py-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div className="space-y-5">
+            <p className="text-[11px] font-medium tracking-[0.24em] text-stone-500">BROCHURE</p>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+              Proof of scale, in a format buyers can scan fast.
+            </h2>
+            <p className="text-sm leading-6 text-stone-600">
+              This brochure gives the site a stronger B2B signal: cover, office, factory floor, workshop, and QC
+              visuals all in one place.
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              {factoryMetrics.map((item) => (
+                <div key={item.label} className="rounded-[14px] border border-stone-200 bg-[#fcfbf8] p-4">
+                  <p className="text-2xl font-semibold text-ink-950">{item.value}</p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.2em] text-stone-500">{item.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/about-us#brochure"
+                className="inline-flex items-center gap-2 rounded-full bg-ink-950 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-ink-800"
+              >
+                Open brochure section
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/company-profile.pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-stone-300 px-4 py-2.5 text-sm font-medium text-ink-950 transition hover:bg-stone-50"
+              >
+                Download company PDF
+              </Link>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <article className="overflow-hidden rounded-[18px] border border-stone-200 bg-[#fcfbf8] shadow-[0_18px_40px_rgba(15,23,42,0.05)] sm:row-span-2">
+              <img src={brochureAssets[0].image} alt={brochureAssets[0].title} className="h-full w-full object-cover" />
+            </article>
+            <article className="overflow-hidden rounded-[18px] border border-stone-200 bg-[#fcfbf8] shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+              <img src={brochureAssets[1].image} alt={brochureAssets[1].title} className="h-full w-full object-cover" />
+            </article>
+            <article className="overflow-hidden rounded-[18px] border border-stone-200 bg-[#fcfbf8] shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+              <img src={brochureAssets[2].image} alt={brochureAssets[2].title} className="h-full w-full object-cover" />
+            </article>
           </div>
         </Container>
       </section>

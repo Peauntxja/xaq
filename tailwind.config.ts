@@ -6,30 +6,26 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: "#0b0f14",
-          900: "#11161d",
-          850: "#161c24",
-          800: "#1d2631",
-          700: "#2a3645",
-          600: "#3b4a5d",
-          500: "#56708a"
+          950: "#070809",
+          900: "#0c0e10",
+          850: "#121518",
+          800: "#1a1e23",
+          700: "#2a3038",
+          600: "#3d4550",
+          500: "#6b7585"
         },
-        amber: {
-          300: "#f4d18c",
-          400: "#e7b75a",
-          500: "#d99d2b"
-        },
-        teal: {
-          300: "#8dd4cf",
-          400: "#4bb5b0",
-          500: "#2d8f8b"
+        steel: {
+          200: "#c8ced3",
+          300: "#a8b0bc",
+          400: "#8a93a1"
         }
       },
-      boxShadow: {
-        glow: "0 18px 50px rgba(0, 0, 0, 0.35)"
+      fontFamily: {
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"]
       },
-      borderRadius: {
-        xl2: "1rem"
+      boxShadow: {
+        glow: "0 24px 60px rgba(0, 0, 0, 0.45)"
       }
     }
   },

@@ -4,7 +4,7 @@ import { Panel } from "@/components/ui";
 
 export default function PrivacyPolicyPage() {
   return (
-    <RichTextPage eyebrow="Policies" title="Privacy policy" description="Static policy page for the demo storefront.">
+    <RichTextPage eyebrow="Policies" title="Privacy policy" description="How HPTA handles inquiry information.">
       <Panel className="space-y-4 p-6 text-sm leading-6 text-stone-300">
         <p>{policyCopy.privacy}</p>
         <p>Last updated: August 22, 2026</p>

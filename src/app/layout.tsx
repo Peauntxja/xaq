@@ -1,49 +1,33 @@
 import type { Metadata } from "next";
+import { Manrope, Orbitron } from "next/font/google";
 import "@/app/globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { StoreProvider } from "@/components/store-provider";
+
+const display = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"]
+});
+
+const body = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"]
+});
 
 export const metadata: Metadata = {
-  title: "Hyper Professional Tattoo Assortment",
-  description: "A static HPTA storefront demo aligned to the Vlad Blad reference structure."
+  title: "HPTA — Hyper Professional Tattoo Assortment",
+  description: "Professional tattoo machines by HPTA. Brand catalog and inquiry."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                var targets = [
-                  'data-immersive-translate-page-theme',
-                  'data-new-gr-c-s-check-loaded',
-                  'data-gr-ext-installed',
-                  'cz-shortcut-listen'
-                ];
-
-                function strip(node) {
-                  if (!node || !node.removeAttribute) return;
-                  for (var i = 0; i < targets.length; i += 1) {
-                    node.removeAttribute(targets[i]);
-                  }
-                }
-
-                strip(document.documentElement);
-                strip(document.body);
-              })();
-            `
-          }}
-        />
-      </head>
-      <body suppressHydrationWarning>
-        <StoreProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </StoreProvider>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+      <body className="bg-ink-950 font-sans text-stone-100 antialiased" suppressHydrationWarning>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

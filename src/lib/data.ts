@@ -60,9 +60,12 @@ export type EventItem = {
 
 export const siteNav = [
   { label: "HOME", href: "/" },
-  { label: "TATTOO MACHINES", href: "/collections/machines" },
+  { label: "MACHINES", href: "/collections/machines" },
   { label: "ACCESSORIES", href: "/collections/accessories" },
-  { label: "COMPANY", href: "/about-us" }
+  { label: "BLOG", href: "/blog" },
+  { label: "ABOUT", href: "/about-us" },
+  { label: "FAQ", href: "/faq" },
+  { label: "CONTACT", href: "/pages/contact" }
 ];
 
 export const companyProfile: CompanyProfile = {
@@ -75,18 +78,42 @@ export const companyProfile: CompanyProfile = {
   address: "FLAT/RM 602, 6/F, KAI YUE COMMERCIAL BUILDING, No.2C ARGYLE STREET, MONGKOK, KL"
 };
 
+export const seriesChapters = [
+  {
+    id: "avenger",
+    series: "Avenger Series",
+    headline: "Hybrid control. Session endurance.",
+    copy: "MultiStroke hybrids built for artists who switch line and shade without changing machines.",
+    href: "/collections/machines#avenger"
+  },
+  {
+    id: "ultron",
+    series: "Ultron Series",
+    headline: "Pen precision. Daily reliability.",
+    copy: "Rotary pens tuned for lining, packing, and long wireless sessions with a balanced grip story.",
+    href: "/collections/machines#ultron"
+  },
+  {
+    id: "coil",
+    series: "Coil Series",
+    headline: "Coil feel. Purpose-built hit.",
+    copy: "Dedicated liners and packers for artists who still want the classic frame response.",
+    href: "/collections/machines#coil"
+  }
+];
+
 export const companyStrengths = [
   {
-    title: "Official company record",
-    text: "Hong Kong registration details and business address are ready to surface in a buyer-facing profile."
+    title: "Built for professionals",
+    text: "Every machine page leads with series context, clear specs, and an inquiry path — not a checkout gimmick."
   },
   {
-    title: "Wholesale-first structure",
-    text: "The catalog, inquiry flow, and support pages are arranged for distributors, studios, and resellers."
+    title: "Catalog depth",
+    text: "Avenger, Ultron, and Coil families cover hybrid, pen, and coil workflows without forcing one form factor."
   },
   {
-    title: "Clear product depth",
-    text: "Product families, compare tools, and manuals make the site feel like a proper B2B catalog."
+    title: "Credible company record",
+    text: "HPTA is presented under SEISHIN CO., LIMITED with Hong Kong registration details available on request."
   }
 ];
 
@@ -493,45 +520,41 @@ export const articles: Article[] = [
 
 export const faqSections: FAQSection[] = [
   {
-    title: "Ordering and payment",
+    title: "Products and lineup",
     items: [
       {
-        q: "What payment methods do you accept?",
-        a: "This demo accepts credit card, Apple Pay, and PayPal placeholders. On the live site these would map to your actual checkout provider."
+        q: "How do I choose between Avenger, Ultron, and Coil?",
+        a: "Avenger covers MultiStroke hybrids, Ultron covers pen workflows, and Coil keeps dedicated liner and packer frames. Browse each series chapter or inquire with your main technique."
       },
       {
-        q: "Can I cancel or change my order after it's placed?",
-        a: "For the demo we show a standard cancellation policy window before fulfillment starts."
-      },
-      {
-        q: "How long will it take to receive my order?",
-        a: "Orders display the estimated shipping window directly on the product page."
+        q: "Where can I find specs and manuals?",
+        a: "Each product page lists the specification table and a manual link when available."
       }
     ]
   },
   {
-    title: "Shipping and delivery",
+    title: "Inquiry and support",
     items: [
       {
-        q: "What are the shipping options and costs?",
-        a: "The demo shows free shipping thresholds, domestic options, and an international fallback."
+        q: "How do I request pricing or availability?",
+        a: "Use the Inquire button on any machine or open the Contact page. Include your studio or distributor details and the models you need."
       },
       {
-        q: "Can I track my order?",
-        a: "Yes. The account page shows a mock shipment tracker and parcel status chips."
+        q: "Who is the legal entity behind HPTA?",
+        a: "HPTA is presented by SEISHIN CO., LIMITED. Company registration details are listed on the About page."
       }
     ]
   },
   {
-    title: "Returns and exchanges",
+    title: "Shipping and warranty",
     items: [
       {
-        q: "What is your return policy?",
-        a: "The demo uses a standard 14-day return window for unopened items and service-warranty handling for devices."
+        q: "Do you ship internationally?",
+        a: "Shipping options and timelines are confirmed during inquiry based on region and order volume."
       },
       {
-        q: "What should I do if I receive a damaged item?",
-        a: "Use the contact form or the support card on the product page to start a return case."
+        q: "What if a machine arrives damaged?",
+        a: "Contact us with photos and order details. Warranty and return handling is arranged case by case."
       }
     ]
   }
@@ -551,13 +574,13 @@ export const eventItems: EventItem[] = [
 
 export const policyCopy = {
   privacy:
-    "This demo site explains how a tattoo equipment store can present privacy, order, shipping, and warranty information without backend complexity.",
+    "HPTA collects inquiry details only to respond to product and partnership requests. Do not submit sensitive personal data through the static contact form.",
   refund:
-    "Open the support contact form for returns, damaged items, or warranty questions. The live store can swap this mock text for your actual terms.",
+    "Returns and warranty handling are arranged after inquiry confirmation. Contact us with order details and photos for damaged goods.",
   shipping:
-    "Orders show shipping expectations, free-shipping thresholds, and manual handling notes. The delivery page can later connect to your real fulfillment flow.",
+    "Shipping options and timelines are confirmed during inquiry based on region and volume.",
   terms:
-    "All content is mock data for demo and review purposes only. Replace this with your official terms before launch."
+    "Site content describes the HPTA product assortment for informational purposes. Replace policy text with your official terms before commercial launch."
 };
 
 export function getProductBySlug(slug: string) {

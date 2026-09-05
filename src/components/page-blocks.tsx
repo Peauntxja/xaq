@@ -7,17 +7,9 @@ import {
   FAQAccordion,
   ArticleGrid,
   TeamGrid,
-  EventsList,
-  StoreSummary,
-  CompareTable,
   ProductGallery,
-  ProductActions,
-  CompareView,
-  SearchPanel,
-  CartView,
-  WishlistView
+  SpecTable
 } from "@/components/catalog";
-import { type MachineProduct, type Article, type FAQSection, type TeamMember, type EventItem } from "@/lib/data";
 
 export function SplitHero({
   eyebrow,
@@ -47,8 +39,8 @@ export function SplitHero({
                 href={cta.href}
                 className={
                   cta.primary
-                    ? "inline-flex items-center gap-2 rounded-lg bg-amber-400 px-4 py-2 text-sm font-medium text-stone-950"
-                    : "inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white"
+                    ? "inline-flex items-center gap-2 rounded-md bg-white px-4 py-2.5 text-sm font-medium text-ink-950 hover:bg-steel-200"
+                    : "inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10"
                 }
               >
                 {cta.label}
@@ -134,13 +126,6 @@ export {
   FAQAccordion,
   ArticleGrid,
   TeamGrid,
-  EventsList,
-  StoreSummary,
-  CompareTable,
   ProductGallery,
-  ProductActions,
-  CompareView,
-  SearchPanel,
-  CartView,
-  WishlistView
+  SpecTable
 };

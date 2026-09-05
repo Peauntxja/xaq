@@ -6,12 +6,15 @@ export default function BlogPage() {
     <>
       <SplitHero
         eyebrow="Blog"
-        title="Editorial pages for education and SEO."
-        description="The reference site uses article pages and support articles to reinforce product confidence. This demo includes a simple blog structure too."
-        ctas={[{ label: "Machines", href: "/collections/machines", primary: true }, { label: "About", href: "/about-us" }]}
+        title="From the bench."
+        description="Guides and notes for choosing stroke, voltage, and machine families — brand education for working artists."
+        ctas={[
+          { label: "Machines", href: "/collections/machines", primary: true },
+          { label: "Inquire", href: "/pages/contact" }
+        ]}
         image="/brochure/cover.png"
       />
-      <CatalogSection title="Latest posts" description="Short educational entries that can later become a real content hub.">
+      <CatalogSection title="Latest posts" description="Short entries that keep the catalog grounded in practice.">
         <ArticleGrid articles={articles} />
       </CatalogSection>
     </>

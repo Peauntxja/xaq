@@ -84,21 +84,24 @@ export const seriesChapters = [
     series: "Avenger Series",
     headline: "Hybrid control. Session endurance.",
     copy: "MultiStroke hybrids built for artists who switch line and shade without changing machines.",
-    href: "/collections/machines#avenger"
+    href: "/collections/machines#avenger",
+    image: "https://hptausa.com/cdn/shop/files/J74.png?v=1783313487&width=1600"
   },
   {
     id: "ultron",
     series: "Ultron Series",
     headline: "Pen precision. Daily reliability.",
     copy: "Rotary pens tuned for lining, packing, and long wireless sessions with a balanced grip story.",
-    href: "/collections/machines#ultron"
+    href: "/collections/machines#ultron",
+    image: "https://hptausa.com/cdn/shop/files/P82.png?v=1783313488&width=1600"
   },
   {
     id: "coil",
     series: "Coil Series",
     headline: "Coil feel. Purpose-built hit.",
     copy: "Dedicated liners and packers for artists who still want the classic frame response.",
-    href: "/collections/machines#coil"
+    href: "/collections/machines#coil",
+    image: "https://hptausa.com/cdn/shop/files/L93.png?v=1783313488&width=1600"
   }
 ];
 

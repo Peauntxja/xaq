@@ -134,16 +134,20 @@ export const factoryMetrics = [
   { value: "QC", label: "Dedicated inspection" }
 ];
 
-const shortPenSpecs = {
+const shortPenIntro = "Chosen by professional tattoo artists worldwide.";
+
+const shortPenSpecs: Record<string, string> = {
   Material: "Aluminum",
-  Stroke: "4.0 mm",
+  Stroke: "4.0mm",
   Motor: "Brushless motor 8V 6500RPM",
-  Battery: "1500 mAh",
-  "Charge time": "Approx. 2.5 hours",
-  "Run time": "Approx. 4.5 hours at 8V",
-  "Operating voltage": "4–12 V",
+  Battery: "Capacity 1500mAh",
+  "Charge Time": "Approx. 2.5 hours",
+  "Lasting Time": "Approx. 4.5 hours at 8V",
+  "Operating voltage": "4-12V",
   Charging: "USB-C"
 };
+
+const shortPenFeatures: string[] = [];
 
 export const machineProducts: MachineProduct[] = [
   {
@@ -153,15 +157,10 @@ export const machineProducts: MachineProduct[] = [
     type: "Battery Tattoo Pen",
     status: "Available for inquiry",
     accent: "Black / Blue / Green",
-    summary: "Compact battery tattoo pen with a brushless motor and 4.0 mm stroke.",
-    longSummary: "J-7 is a battery short pen in Black, Blue, and Green. Specs match the HPTA USA catalog.",
-    features: ["Brushless motor 8V 6500RPM", "4.0 mm stroke", "1500 mAh battery", "USB-C charging", "Three finish options"],
-    specs: {
-      Model: "J-7",
-      Type: "Battery short pen",
-      Finishes: "Black / Blue / Green",
-      ...shortPenSpecs
-    },
+    summary: shortPenIntro,
+    longSummary: shortPenIntro,
+    features: shortPenFeatures,
+    specs: { ...shortPenSpecs },
     colors: ["Black", "Blue", "Green"],
     images: [
       "/products/J74.png",
@@ -183,15 +182,10 @@ export const machineProducts: MachineProduct[] = [
     type: "Battery Tattoo Pen",
     status: "Available for inquiry",
     accent: "Brown / Black / Purple",
-    summary: "Compact battery tattoo pen with a brushless motor and 4.0 mm stroke.",
-    longSummary: "L-9 is a battery short pen in Brown, Black, and Purple. Specs match the HPTA USA catalog.",
-    features: ["Brushless motor 8V 6500RPM", "4.0 mm stroke", "1500 mAh battery", "USB-C charging", "Three finish options"],
-    specs: {
-      Model: "L-9",
-      Type: "Battery short pen",
-      Finishes: "Brown / Black / Purple",
-      ...shortPenSpecs
-    },
+    summary: shortPenIntro,
+    longSummary: shortPenIntro,
+    features: shortPenFeatures,
+    specs: { ...shortPenSpecs },
     colors: ["Brown", "Black", "Purple"],
     images: [
       "/products/L93.png",
@@ -209,15 +203,10 @@ export const machineProducts: MachineProduct[] = [
     type: "Battery Tattoo Pen",
     status: "Available for inquiry",
     accent: "Silver / Gold / Brown",
-    summary: "Compact battery tattoo pen with a brushless motor and 4.0 mm stroke.",
-    longSummary: "P-8 is a battery short pen in Silver, Gold, and Brown. Specs match the HPTA USA catalog.",
-    features: ["Brushless motor 8V 6500RPM", "4.0 mm stroke", "1500 mAh battery", "USB-C charging", "Three finish options"],
-    specs: {
-      Model: "P-8",
-      Type: "Battery short pen",
-      Finishes: "Silver / Gold / Brown",
-      ...shortPenSpecs
-    },
+    summary: shortPenIntro,
+    longSummary: shortPenIntro,
+    features: shortPenFeatures,
+    specs: { ...shortPenSpecs },
     colors: ["Silver", "Gold", "Brown"],
     images: [
       "/products/P82.png",
@@ -235,25 +224,22 @@ export const machineProducts: MachineProduct[] = [
     type: "Battery Stroke Pen",
     status: "Available for inquiry",
     accent: "Red / Silver / Black",
-    summary: "Battery stroke pen with adjustable stroke length and an OLED display.",
-    longSummary: "RS is a battery stroke pen in Red, Silver, and Black. Specs match the HPTA USA catalog.",
-    features: ["Adjustable stroke 2.4–4.2 mm", "Motor 8V 6500RPM", "OLED color screen", "1800 mAh battery", "USB-C charging"],
+    summary: shortPenIntro,
+    longSummary: shortPenIntro,
+    features: shortPenFeatures,
     specs: {
-      Model: "RS",
-      Type: "Battery stroke pen",
       Material: "Aluminum",
-      "Stroke length": "2.4 / 2.7 / 3.0 / 3.3 / 3.6 / 3.9 / 4.2 mm",
+      "Stroke Length": "2.4/2.7/3.0/3.3/3.6/3.9/4.2 mm",
       Motor: "8V, 6500RPM",
-      Display: "OLED high-definition color screen",
-      "Output voltage": "4–12 V",
-      "Input voltage": "DC 5V / 1–2 A",
-      "Charging port": "USB-C",
-      "Battery capacity": "1800 mAh",
-      "Charge time": "Approx. 2.5 hours",
-      "Average run time": "Approx. 8 hours",
-      "Net weight": "275 g",
-      Size: "φ37 × 141 mm",
-      Finishes: "Red / Silver / Black"
+      Display: "OLED High-Definition Color Screen",
+      "Output Voltage": "4–12 V",
+      "Input Voltage": "DC 5V / 1–2 A",
+      "Charging Port": "USB-C",
+      "Battery Capacity": "1800 mAh",
+      "Charge Time": "2.5 hours",
+      "Average run time": "8 hours",
+      "Net Weight": "275 g",
+      Size: "φ37 × 141 mm"
     },
     colors: ["Red", "Silver", "Black"],
     images: [
@@ -308,7 +294,7 @@ export const faqSections: FAQSection[] = [
       },
       {
         q: "What information is shown on each product page?",
-        a: "Each page lists model, motor, stroke, battery, finish, and related specs aligned with the HPTA USA catalog. Pricing is shared on inquiry."
+        a: "Each page lists the same introduction and specifications as the HPTA USA catalog. Pricing is shared on inquiry."
       }
     ]
   },

@@ -35,37 +35,6 @@ export function ProductCard({ product }: { product: MachineProduct }) {
   );
 }
 
-export function AccessoryCard({
-  name,
-  summary,
-  images,
-  slug
-}: {
-  name: string;
-  summary: string;
-  images: string[];
-  slug: string;
-}) {
-  return (
-    <Panel className="group flex h-full flex-col overflow-hidden transition hover:border-white/25">
-      <div className="aspect-[4/3] overflow-hidden bg-ink-900">
-        <img src={images[0]} alt={name} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]" />
-      </div>
-      <div className="flex flex-1 flex-col gap-3 p-4">
-        <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500">Accessory</p>
-        <p className="font-display text-lg font-semibold text-white">{name}</p>
-        <p className="text-sm leading-6 text-stone-400">{summary}</p>
-        <Link
-          href={`/pages/contact?product=${slug}`}
-          className="mt-auto text-[11px] font-medium uppercase tracking-[0.18em] text-white underline-offset-4 hover:underline"
-        >
-          Inquire
-        </Link>
-      </div>
-    </Panel>
-  );
-}
-
 export function ProductGallery({ images, name }: { images: string[]; name: string }) {
   const [active, setActive] = useState(0);
   const current = images[active] ?? images[0];

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { getProductBySlug, machineProducts } from "@/lib/data";
 import { Container, Panel, PageTitle, Section, Badge } from "@/components/ui";
 import { ProductGallery, SpecTable, ProductCard } from "@/components/catalog";
@@ -55,14 +55,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 >
                   Inquire
                 </Link>
-                <a
-                  href={product.manualUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md border border-white/15 px-5 py-2.5 text-sm text-white hover:bg-white/5"
-                >
-                  Manual <ExternalLink className="h-4 w-4" />
-                </a>
               </div>
               {product.colors.length ? (
                 <div>
@@ -84,7 +76,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       {related.length ? (
         <Section className="border-t border-white/10">
           <Container className="space-y-6">
-            <PageTitle eyebrow="Same series" title="Related machines" />
+            <PageTitle eyebrow="More models" title="Related machines" />
             <div className="grid gap-4 md:grid-cols-3">
               {related.map((item) => (
                 <ProductCard key={item.slug} product={item} />

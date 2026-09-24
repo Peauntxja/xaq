@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { Container, Panel, PageTitle, Section, Badge } from "@/components/ui";
 import {
   ProductCard,
-  AccessoryCard,
   FAQAccordion,
   ArticleGrid,
   TeamGrid,
@@ -122,7 +121,6 @@ export function RichTextPage({
 
 export {
   ProductCard,
-  AccessoryCard,
   FAQAccordion,
   ArticleGrid,
   TeamGrid,

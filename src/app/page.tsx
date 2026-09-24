@@ -3,32 +3,30 @@ import { ArrowRight } from "lucide-react";
 import { machineProducts, seriesChapters } from "@/lib/data";
 import { Container } from "@/components/ui";
 
-const heroImage =
-  "https://hptausa.com/cdn/shop/files/c41e435b6de6e85625463bfe9f77a9f3.png?v=1779331287&width=3840";
+const heroImage = "/products/P82-1224b423-0749-42ad-8db4-83e7bdfd320f.jpg";
 
 export default function HomePage() {
-  const featured = [machineProducts[2], machineProducts[5]].filter(Boolean);
+  const featured = machineProducts;
 
   return (
     <div className="bg-ink-950 text-stone-100">
-      <section className="relative min-h-[92vh] overflow-hidden">
-        <img src={heroImage} alt="HPTA tattoo machine" className="absolute inset-0 h-full w-full object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/35 to-ink-950/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-950/70 via-transparent to-transparent" />
+      <section className="relative min-h-[92vh] overflow-hidden bg-ink-950">
+        <img
+          src={heroImage}
+          alt="HPTA P8 battery tattoo pen"
+          className="absolute inset-0 h-full w-full object-cover object-[70%_center] scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-950/80 via-ink-950/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-950/70 to-transparent" />
         <Container className="relative flex min-h-[92vh] flex-col justify-end pb-16 pt-24 sm:pb-24">
-          <img
-            src="/brand/hpta-logo.png"
-            alt="HPTA"
-            className="mb-6 h-16 w-auto object-contain invert sm:h-20"
-          />
           <p className="font-display text-6xl font-semibold tracking-[0.14em] text-white sm:text-8xl lg:text-9xl">
             HPTA
           </p>
-          <p className="mt-3 text-[11px] uppercase tracking-[0.32em] text-white/75">
+          <p className="mt-3 text-[11px] uppercase tracking-[0.32em] text-white/80">
             Hyper Professional Tattoo Assortment
           </p>
-          <p className="mt-6 max-w-md text-base leading-7 text-white/85 sm:text-lg">
-            Professional tattoo machines — built for the bench.
+          <p className="mt-6 max-w-md text-base leading-7 text-white/90 sm:text-lg">
+            J7, L9, P8, and RS battery tattoo machines.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -40,7 +38,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/pages/contact"
-              className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-black/30 px-5 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-black/50"
+              className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-black/25 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-black/40"
             >
               Inquire
             </Link>
@@ -101,7 +99,7 @@ export default function HomePage() {
               Full lineup →
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {featured.map((product) => (
               <Link
                 key={product.slug}
@@ -136,7 +134,7 @@ export default function HomePage() {
             <div className="max-w-xl">
               <p className="font-display text-4xl font-semibold tracking-[0.12em] text-white sm:text-5xl">HPTA</p>
               <p className="mt-3 text-sm leading-6 text-stone-400 sm:text-base">
-                Avenger, Ultron, and Coil — one brand for professional tattoo machines.
+                J7, L9, P8, and RS — the current HPTA battery tattoo machine lineup.
               </p>
               <Link href="/about-us" className="mt-4 inline-flex text-sm text-steel-300 hover:text-white">
                 About the brand →

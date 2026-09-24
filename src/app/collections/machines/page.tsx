@@ -9,11 +9,10 @@ export default function MachinesPage() {
     <>
       <SplitHero
         eyebrow="Tattoo machines"
-        title="Professional machines, presented by series."
-        description="Browse Avenger, Ultron, and Coil like a brand catalog — chapter intros, clear specs on each product, and an inquire path."
+        title="The HPTA battery machine lineup."
+        description="Browse J7, L9, P8, and RS by machine type, finish, motor, and confirmed in-box details."
         ctas={[
-          { label: "Inquire", href: "/pages/contact", primary: true },
-          { label: "Accessories", href: "/collections/accessories" }
+          { label: "Inquire", href: "/pages/contact", primary: true }
         ]}
         image={machineProducts[1].images[0]}
       />

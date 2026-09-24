@@ -82,7 +82,7 @@ export const seriesChapters = [
     headline: "J-7, L-9 & P-8.",
     copy: "Three compact battery pens with a brushless motor, 4.0 mm stroke, and distinct finish options.",
     href: "/collections/machines#short-pen",
-    image: "/products/P82.png"
+    image: "/products/J74.png"
   },
   {
     id: "stroke-pen",

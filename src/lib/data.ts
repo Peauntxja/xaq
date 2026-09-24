@@ -79,25 +79,25 @@ export const seriesChapters = [
   {
     id: "short-pen",
     series: "Battery Short Pen",
-    headline: "J7, L9 & P8.",
-    copy: "Three compact battery pen models with an outrunner brushless motor and distinct finish options.",
+    headline: "J-7, L-9 & P-8.",
+    copy: "Three compact battery pens with a brushless motor, 4.0 mm stroke, and distinct finish options.",
     href: "/collections/machines#short-pen",
-    image: "/products/P82-1224b423-0749-42ad-8db4-83e7bdfd320f.jpg"
+    image: "/products/P82.png"
   },
   {
     id: "stroke-pen",
     series: "Battery Stroke Pen",
     headline: "RS.",
-    copy: "A battery stroke pen with an iron-core motor and three finish options.",
+    copy: "A battery stroke pen with adjustable stroke length, OLED display, and three finish options.",
     href: "/collections/machines#stroke-pen",
-    image: "/products/RS1-f5cad8a3-9cb9-442c-b926-3eedc96d4597.jpg"
+    image: "/products/RS1.png"
   }
 ];
 
 export const companyStrengths = [
   {
     title: "Verified lineup",
-    text: "The catalog presents four supplied HPTA machine models with confirmed motor, finish, and in-box details."
+    text: "The catalog presents J-7, L-9, P-8, and RS with finishes and specs aligned to the HPTA USA store."
   },
   {
     title: "Local product visuals",
@@ -134,83 +134,98 @@ export const factoryMetrics = [
   { value: "QC", label: "Dedicated inspection" }
 ];
 
+const shortPenSpecs = {
+  Material: "Aluminum",
+  Stroke: "4.0 mm",
+  Motor: "Brushless motor 8V 6500RPM",
+  Battery: "1500 mAh",
+  "Charge time": "Approx. 2.5 hours",
+  "Run time": "Approx. 4.5 hours at 8V",
+  "Operating voltage": "4–12 V",
+  Charging: "USB-C"
+};
+
 export const machineProducts: MachineProduct[] = [
   {
     slug: "j7",
-    name: "J7",
+    name: "J-7",
     series: "Battery Short Pen",
     type: "Battery Tattoo Pen",
     status: "Available for inquiry",
-    accent: "Coffee + Silver / Purple + Black / Green + Black",
-    summary: "Compact battery tattoo pen with an outrunner brushless motor.",
-    longSummary: "J7 is a battery short pen offered in three supplied finishes. It is presented with confirmed motor and in-box details only.",
-    features: ["Outrunner brushless motor", "Battery-powered", "Three finish options", "Battery, cable, and packaging included"],
+    accent: "Black / Blue / Green",
+    summary: "Compact battery tattoo pen with a brushless motor and 4.0 mm stroke.",
+    longSummary: "J-7 is a battery short pen in Black, Blue, and Green. Specs match the HPTA USA catalog.",
+    features: ["Brushless motor 8V 6500RPM", "4.0 mm stroke", "1500 mAh battery", "USB-C charging", "Three finish options"],
     specs: {
-      Model: "J7",
+      Model: "J-7",
       Type: "Battery short pen",
-      Motor: "Outrunner brushless motor",
-      Finishes: "Coffee + Silver / Purple + Black / Green + Black",
-      "In the box": "1 battery · 1 charging cable · 1 set packaging"
+      Finishes: "Black / Blue / Green",
+      ...shortPenSpecs
     },
-    colors: ["Coffee + Silver", "Purple + Black", "Green + Black"],
+    colors: ["Black", "Blue", "Green"],
     images: [
-      "/products/L93-5ad2b6ab-0367-4a27-9e98-d0a0ec1512fe.jpg",
-      "/products/L92-7a8da9d6-4ebb-431c-af64-41c6dd458684.jpg",
-      "/products/Box_J7-c7347a9a-5561-4b6b-9e12-53ceca40ac5e.jpg"
+      "/products/J74.png",
+      "/products/J76.png",
+      "/products/J72.png",
+      "/products/J73.png",
+      "/products/J75.png",
+      "/products/J71.png",
+      "/products/Box_J7a.png",
+      "/products/Box_J7.png"
     ],
-    compareTag: "J7",
+    compareTag: "J-7",
     category: "machines"
   },
   {
     slug: "l9",
-    name: "L9",
+    name: "L-9",
     series: "Battery Short Pen",
     type: "Battery Tattoo Pen",
     status: "Available for inquiry",
-    accent: "Green + Black / Blue + Silver / Black + Red",
-    summary: "Compact battery tattoo pen with an outrunner brushless motor.",
-    longSummary: "L9 is a battery short pen supplied with three finish options and the standard battery, charging cable, and packaging set.",
-    features: ["Outrunner brushless motor", "Battery-powered", "Three finish options", "Battery, cable, and packaging included"],
+    accent: "Brown / Black / Purple",
+    summary: "Compact battery tattoo pen with a brushless motor and 4.0 mm stroke.",
+    longSummary: "L-9 is a battery short pen in Brown, Black, and Purple. Specs match the HPTA USA catalog.",
+    features: ["Brushless motor 8V 6500RPM", "4.0 mm stroke", "1500 mAh battery", "USB-C charging", "Three finish options"],
     specs: {
-      Model: "L9",
+      Model: "L-9",
       Type: "Battery short pen",
-      Motor: "Outrunner brushless motor",
-      Finishes: "Green + Black / Blue + Silver / Black + Red",
-      "In the box": "1 battery · 1 charging cable · 1 set packaging"
+      Finishes: "Brown / Black / Purple",
+      ...shortPenSpecs
     },
-    colors: ["Green + Black", "Blue + Silver", "Black + Red"],
+    colors: ["Brown", "Black", "Purple"],
     images: [
-      "/products/J75-f0da7519-2227-4cd0-8366-6d8a94911b70.jpg",
-      "/products/Box_L9-2943a1c7-b382-48d7-a673-5b91136bb3e5.jpg"
+      "/products/L93.png",
+      "/products/L91.png",
+      "/products/L92.png",
+      "/products/Box_L9.png"
     ],
-    compareTag: "L9",
+    compareTag: "L-9",
     category: "machines"
   },
   {
     slug: "p8",
-    name: "P8",
+    name: "P-8",
     series: "Battery Short Pen",
     type: "Battery Tattoo Pen",
     status: "Available for inquiry",
-    accent: "Silver White / Gold / Gunmetal",
-    summary: "Compact battery tattoo pen with an outrunner brushless motor.",
-    longSummary: "P8 is a battery short pen with three supplied finishes. Product imagery includes the silver white, gold, gunmetal, and boxed presentation.",
-    features: ["Outrunner brushless motor", "Battery-powered", "Three finish options", "Battery, cable, and packaging included"],
+    accent: "Silver / Gold / Brown",
+    summary: "Compact battery tattoo pen with a brushless motor and 4.0 mm stroke.",
+    longSummary: "P-8 is a battery short pen in Silver, Gold, and Brown. Specs match the HPTA USA catalog.",
+    features: ["Brushless motor 8V 6500RPM", "4.0 mm stroke", "1500 mAh battery", "USB-C charging", "Three finish options"],
     specs: {
-      Model: "P8",
+      Model: "P-8",
       Type: "Battery short pen",
-      Motor: "Outrunner brushless motor",
-      Finishes: "Silver White / Gold / Gunmetal",
-      "In the box": "1 battery · 1 charging cable · 1 set packaging"
+      Finishes: "Silver / Gold / Brown",
+      ...shortPenSpecs
     },
-    colors: ["Silver White", "Gold", "Gunmetal"],
+    colors: ["Silver", "Gold", "Brown"],
     images: [
-      "/products/P82-1224b423-0749-42ad-8db4-83e7bdfd320f.jpg",
-      "/products/J76-0853f9e6-0507-4c6a-a706-05430de8673f.jpg",
-      "/products/P81-198e31ce-499d-4c56-93cc-ae59eba63e2b.jpg",
-      "/products/Box_P8-5054b293-aa7b-4056-8f00-5d45b24f748f.jpg"
+      "/products/P82.png",
+      "/products/P81.png",
+      "/products/P83.png",
+      "/products/Box_P8.png"
     ],
-    compareTag: "P8",
+    compareTag: "P-8",
     category: "machines"
   },
   {
@@ -219,23 +234,33 @@ export const machineProducts: MachineProduct[] = [
     series: "Battery Stroke Pen",
     type: "Battery Stroke Pen",
     status: "Available for inquiry",
-    accent: "Silver + Black / Black + Red / Red + Black",
-    summary: "Battery stroke pen with an iron-core motor.",
-    longSummary: "RS is a battery stroke pen supplied with an iron-core motor, three finish options, and the standard in-box set.",
-    features: ["Iron-core motor", "Battery-powered", "Three finish options", "Battery, cable, and packaging included"],
+    accent: "Red / Silver / Black",
+    summary: "Battery stroke pen with adjustable stroke length and an OLED display.",
+    longSummary: "RS is a battery stroke pen in Red, Silver, and Black. Specs match the HPTA USA catalog.",
+    features: ["Adjustable stroke 2.4–4.2 mm", "Motor 8V 6500RPM", "OLED color screen", "1800 mAh battery", "USB-C charging"],
     specs: {
       Model: "RS",
       Type: "Battery stroke pen",
-      Motor: "Iron-core motor",
-      Finishes: "Silver + Black / Black + Red / Red + Black",
-      "In the box": "1 battery · 1 charging cable · 1 set packaging"
+      Material: "Aluminum",
+      "Stroke length": "2.4 / 2.7 / 3.0 / 3.3 / 3.6 / 3.9 / 4.2 mm",
+      Motor: "8V, 6500RPM",
+      Display: "OLED high-definition color screen",
+      "Output voltage": "4–12 V",
+      "Input voltage": "DC 5V / 1–2 A",
+      "Charging port": "USB-C",
+      "Battery capacity": "1800 mAh",
+      "Charge time": "Approx. 2.5 hours",
+      "Average run time": "Approx. 8 hours",
+      "Net weight": "275 g",
+      Size: "φ37 × 141 mm",
+      Finishes: "Red / Silver / Black"
     },
-    colors: ["Silver + Black", "Black + Red", "Red + Black"],
+    colors: ["Red", "Silver", "Black"],
     images: [
-      "/products/RS1-f5cad8a3-9cb9-442c-b926-3eedc96d4597.jpg",
-      "/products/RS2-d61de6d8-6c02-4edc-9561-b0f03f8e5024.jpg",
-      "/products/RS3-cda07f63-ddfa-48aa-8437-f325ac088956.jpg",
-      "/products/Box_RS-70735146-7e98-4764-b3d8-c8a5e7af8e57.jpg"
+      "/products/RS3.png",
+      "/products/RS1.png",
+      "/products/RS2.png",
+      "/products/Box_RS.png"
     ],
     compareTag: "RS",
     category: "machines"
@@ -279,11 +304,11 @@ export const faqSections: FAQSection[] = [
     items: [
       {
         q: "Which models are currently available?",
-        a: "The current lineup includes J7, L9, P8 battery short pens and the RS battery stroke pen."
+        a: "The current lineup includes J-7, L-9, P-8 battery short pens and the RS battery stroke pen."
       },
       {
         q: "What information is shown on each product page?",
-        a: "Each page lists only confirmed model, motor, finish, and in-box details from the supplied product sheet."
+        a: "Each page lists model, motor, stroke, battery, finish, and related specs aligned with the HPTA USA catalog. Pricing is shared on inquiry."
       }
     ]
   },

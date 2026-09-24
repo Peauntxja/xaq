@@ -10,7 +10,7 @@ export default function AboutPage() {
       <SplitHero
         eyebrow="About HPTA"
         title="Hyper Professional Tattoo Assortment."
-        description="HPTA presents J7, L9, P8, and RS battery tattoo machines. Brand first — company credentials available for partners who need them."
+        description="HPTA presents J-7, L-9, P-8, and RS battery tattoo machines. Brand first — company credentials available for partners who need them."
         ctas={[
           { label: "Inquire", href: "/pages/contact", primary: true },
           { label: "View machines", href: "/collections/machines" }

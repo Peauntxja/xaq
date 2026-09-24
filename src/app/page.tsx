@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { machineProducts, seriesChapters } from "@/lib/data";
 import { Container } from "@/components/ui";
 
-const heroImage = "/products/P82-1224b423-0749-42ad-8db4-83e7bdfd320f.jpg";
+const heroImage = "/products/P82.png";
 
 export default function HomePage() {
   const featured = machineProducts;
@@ -13,7 +13,7 @@ export default function HomePage() {
       <section className="relative min-h-[92vh] overflow-hidden bg-ink-950">
         <img
           src={heroImage}
-          alt="HPTA P8 battery tattoo pen"
+          alt="HPTA P-8 battery tattoo pen"
           className="absolute inset-0 h-full w-full object-cover object-[70%_center] scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink-950/80 via-ink-950/25 to-transparent" />
@@ -26,7 +26,7 @@ export default function HomePage() {
             Hyper Professional Tattoo Assortment
           </p>
           <p className="mt-6 max-w-md text-base leading-7 text-white/90 sm:text-lg">
-            J7, L9, P8, and RS battery tattoo machines.
+            J-7, L-9, P-8, and RS battery tattoo machines.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -134,7 +134,7 @@ export default function HomePage() {
             <div className="max-w-xl">
               <p className="font-display text-4xl font-semibold tracking-[0.12em] text-white sm:text-5xl">HPTA</p>
               <p className="mt-3 text-sm leading-6 text-stone-400 sm:text-base">
-                J7, L9, P8, and RS — the current HPTA battery tattoo machine lineup.
+                J-7, L-9, P-8, and RS — the current HPTA battery tattoo machine lineup.
               </p>
               <Link href="/about-us" className="mt-4 inline-flex text-sm text-steel-300 hover:text-white">
                 About the brand →

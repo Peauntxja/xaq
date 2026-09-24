@@ -10,7 +10,7 @@ export default function MachinesPage() {
       <SplitHero
         eyebrow="Tattoo machines"
         title="The HPTA battery machine lineup."
-        description="Browse J7, L9, P8, and RS by machine type, finish, motor, and confirmed in-box details."
+        description="Browse J-7, L-9, P-8, and RS by machine type, finish, motor, and confirmed catalog specs."
         ctas={[
           { label: "Inquire", href: "/pages/contact", primary: true }
         ]}
